@@ -48,10 +48,7 @@ class ProfileController extends Controller
             'alert-type' => 'success'
         );
 
-
         return redirect()->back()->with($notification);
-
-
     }
     // End Method
 
@@ -64,7 +61,7 @@ class ProfileController extends Controller
 
     // End Method
 
-    public function PasswordUpdate(Request $request) {
+    public function UserPasswordUpdate(Request $request) {
         $user = Auth::user();
 
         $request->validate([
@@ -87,7 +84,7 @@ class ProfileController extends Controller
 
         Auth::logout();
         $notification = array(
-            'message' => 'Password Changed Successfully! Please log in again.',
+            'message' => 'Password Changed Successfully!',
             'alert-type' => 'success'
         );
 

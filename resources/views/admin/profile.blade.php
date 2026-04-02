@@ -101,7 +101,7 @@
                                                         </div><!--end col-->
                                                     </div>
                                                 </div>
-                                            <form action="" method="post">
+                                            <form action="{{ route('user.password.update') }}" method="post">
                                                 @csrf
                                                 <div class="card-body mb-0">
                                                     <div class="form-group mb-3 row">
