@@ -44,8 +44,17 @@
                                     <td>{{ $item->phone }}</td>
                                     <td><img src="{{ asset($item->image) }}" alt="" style="width: 70px; height: 40px;"></td>
                                     <td>
-                                        <a href=""class="btn btn-success btn-sm">Edit</a>
-                                        <a href="" class="btn btn-danger btn-sm" id="delete">Delete</a>
+                                        <div class="d-flex gap-2">
+                                        <a href="{{ route('edit.hero', $item->id) }}" class="btn btn-success btn-sm">
+                                            Edit
+                                        </a>
+
+                                        <a href="{{ route('delete.hero', $item->id) }}"
+                                            class="btn btn-danger btn-sm"
+                                            id="delete">
+                                            Delete
+                                        </a>
+                                        </div>
                                     </td>
                                 </tr>
 

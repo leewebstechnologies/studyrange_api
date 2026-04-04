@@ -29,6 +29,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/all/heroes', 'AllHeroes')->name('all.heroes');
     Route::get('/add/hero', 'AddHero')->name('add.hero');
     Route::post('/store/hero', 'StoreHero')->name('store.hero');
+    Route::get('/edit/hero/{id}', 'EditHero')->name('edit.hero');
+    Route::post('/update/hero', 'UpdateHero')->name('update.hero');
+    Route::get('/delete/hero/{id}', 'DeleteHero')->name('delete.hero');
 
    });
 
