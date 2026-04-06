@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\ChoiceController;
 use App\Http\Controllers\Backend\HeroController;
 use App\Http\Controllers\Backend\ServiceController;
+use App\Http\Controllers\Backend\SuccessController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -53,6 +54,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/choice/{id}', 'EditChoice')->name('edit.choice');
     Route::post('/update/choice', 'UpdateChoice')->name('update.choice');
     Route::get('/delete/choice/{id}', 'DeleteChoice')->name('delete.choice');
+   });
+
+   Route::controller(SuccessController::class)->group(function() {
+    Route::get('/all/successes', 'AllSuccesses')->name('all.successes');
+    Route::get('/add/success', 'AddSuccess')->name('add.success');
+    Route::post('/store/success', 'StoreSuccess')->name('store.success');
+    Route::get('/edit/success/{id}', 'EditSuccess')->name('edit.success');
+    Route::post('/update/success', 'UpdateSuccess')->name('update.success');
+    Route::get('/delete/success/{id}', 'DeleteSuccess')->name('delete.success');
    });
 
 });

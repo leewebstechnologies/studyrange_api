@@ -92,6 +92,25 @@
                                 </div>
                             </li>
 
+                            <li>
+                                <a href="#success" data-bs-toggle="collapse">
+                                    <i data-feather="check-circle"></i>
+                                    <span> Manage Success </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="success">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="{{ route('all.successes') }}" class="tp-link">All Success Stories</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('add.success') }}" class="tp-link">Add Success Story</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+
 
 
                             <li>
