@@ -36,12 +36,12 @@
                             <li class="menu-title">Pages</li>
 
                             <li>
-                                <a href="#sidebarAuth" data-bs-toggle="collapse">
+                                <a href="#hero" data-bs-toggle="collapse">
                                     <i data-feather="users"></i>
                                     <span> Manage Hero </span>
                                     <span class="menu-arrow"></span>
                                 </a>
-                                <div class="collapse" id="sidebarAuth">
+                                <div class="collapse" id="hero">
                                     <ul class="nav-second-level">
                                         <li>
                                             <a href="{{ route('all.heroes') }}" class="tp-link">All Heroes</a>
@@ -53,6 +53,46 @@
                                     </ul>
                                 </div>
                             </li>
+
+                            <li>
+                                <a href="#service" data-bs-toggle="collapse">
+                                    <i data-feather="briefcase"></i>
+                                    <span> Manage Service </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="service">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="{{ route('all.services') }}" class="tp-link">All Services</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('add.service') }}" class="tp-link">Add Service</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="#choose" data-bs-toggle="collapse">
+                                    <i data-feather="check-circle"></i>
+                                    <span> Manage Choose </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="choose">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="{{ route('all.choices') }}" class="tp-link">All Choices</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('add.choice') }}" class="tp-link">Add Choice</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+
+
 
                             <li>
                                 <a href="#sidebarError" data-bs-toggle="collapse">
