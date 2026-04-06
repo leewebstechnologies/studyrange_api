@@ -75,7 +75,7 @@
 
                             <li>
                                 <a href="#choose" data-bs-toggle="collapse">
-                                    <i data-feather="check-circle"></i>
+                                    <i data-feather="check-square"></i>
                                     <span> Manage Choose </span>
                                     <span class="menu-arrow"></span>
                                 </a>
@@ -111,7 +111,77 @@
                                 </div>
                             </li>
 
+                            <li>
+                                <a href="#live" data-bs-toggle="collapse">
+                                    <i data-feather="activity"></i>
+                                    <span>Manage Live Acceptance</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="live">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="{{ route('all.lives') }}" class="tp-link">All Live Acceptances</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('add.live') }}" class="tp-link">Add Live Acceptance</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
 
+                            <li>
+                                <a href="#partner" data-bs-toggle="collapse">
+                                    <i data-feather="book"></i>
+                                    <span>Manage University Partners</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="partner">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="{{ route('all.partners') }}" class="tp-link">All University Partners</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('add.partner') }}" class="tp-link">Add University Partner</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="#acceptance" data-bs-toggle="collapse">
+                                    <i data-feather="check-circle"></i>
+                                    <span>Manage Acceptance</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="acceptance">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="{{ route('all.acceptances') }}" class="tp-link">All Acceptances</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('add.acceptance') }}" class="tp-link">Add Acceptance</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="#week" data-bs-toggle="collapse">
+                                    <i data-feather="calendar"></i>
+                                    <span>Manage Week's Stats</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="week">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="{{ route('all.weeks') }}" class="tp-link">All Weeks</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('add.week') }}" class="tp-link">Add Week</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
 
                             <li>
                                 <a href="#sidebarError" data-bs-toggle="collapse">
