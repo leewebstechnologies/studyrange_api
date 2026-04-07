@@ -3,6 +3,8 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AcceptanceController;
 use App\Http\Controllers\Backend\ChoiceController;
+use App\Http\Controllers\Backend\ConsultationController;
+use App\Http\Controllers\Backend\FooterController;
 use App\Http\Controllers\Backend\HeroController;
 use App\Http\Controllers\Backend\LiveController;
 use App\Http\Controllers\Backend\PartnerController;
@@ -104,5 +106,24 @@ Route::middleware('auth')->group(function () {
     Route::post('/update/week', 'UpdateWeek')->name('update.week');
     Route::get('/delete/week/{id}', 'DeleteWeek')->name('delete.week');
    });
+
+   Route::controller(ConsultationController::class)->group(function() {
+    Route::get('/all/consultations', 'AllConsultations')->name('all.consultations');
+    Route::get('/add/consultation', 'AddConsultation')->name('add.consultation');
+    Route::post('/store/consultation', 'StoreConsultation')->name('store.consultation');
+    Route::get('/edit/consultation/{id}', 'EditConsultation')->name('edit.consultation');
+    Route::post('/update/consultation', 'UpdateConsultation')->name('update.consultation');
+    Route::get('/delete/consultation/{id}', 'DeleteConsultation')->name('delete.consultation');
+   });
+
+   Route::controller(FooterController::class)->group(function() {
+    Route::get('/all/footers', 'AllFooters')->name('all.footers');
+    Route::get('/add/footer', 'AddFooter')->name('add.footer');
+    Route::post('/store/footer', 'StoreFooter')->name('store.footer');
+    Route::get('/edit/footer/{id}', 'EditFooter')->name('edit.footer');
+    Route::post('/update/footer', 'UpdateFooter')->name('update.footer');
+    Route::get('/delete/footer/{id}', 'DeleteFooter')->name('delete.footer');
+   });
+
 
 });

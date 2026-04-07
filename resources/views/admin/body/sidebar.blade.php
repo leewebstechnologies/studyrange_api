@@ -184,6 +184,42 @@
                             </li>
 
                             <li>
+                                <a href="#consultation" data-bs-toggle="collapse">
+                                    <i data-feather="phone"></i>
+                                    <span>Manage Consultation</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="consultation">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="{{ route('all.consultations') }}" class="tp-link">All Consultations</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('add.consultation') }}" class="tp-link">Add Consultation</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="#footer" data-bs-toggle="collapse">
+                                    <i data-feather="share-2"></i>
+                                    <span>Manage Footer</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="footer">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="{{ route('all.footers') }}" class="tp-link">All Footers</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('add.footer') }}" class="tp-link">Add Footer</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li>
                                 <a href="#sidebarError" data-bs-toggle="collapse">
                                     <i data-feather="alert-octagon"></i>
                                     <span> Error Pages </span>
