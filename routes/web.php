@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AcceptanceController;
 use App\Http\Controllers\Backend\ChoiceController;
 use App\Http\Controllers\Backend\ConsultationController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\Backend\HeroController;
 use App\Http\Controllers\Backend\LiveController;
 use App\Http\Controllers\Backend\PartnerController;
 use App\Http\Controllers\Backend\ServiceController;
+use App\Http\Controllers\Backend\SocialController;
 use App\Http\Controllers\Backend\SuccessController;
 use App\Http\Controllers\Backend\WeekController;
 use App\Http\Controllers\ProfileController;
@@ -123,6 +125,24 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/footer/{id}', 'EditFooter')->name('edit.footer');
     Route::post('/update/footer', 'UpdateFooter')->name('update.footer');
     Route::get('/delete/footer/{id}', 'DeleteFooter')->name('delete.footer');
+   });
+
+   Route::controller(SocialController::class)->group(function() {
+    Route::get('/all/socials', 'AllSocials')->name('all.socials');
+    Route::get('/add/social', 'AddSocial')->name('add.social');
+    Route::post('/store/social', 'StoreSocial')->name('store.social');
+    Route::get('/edit/social/{id}', 'EditSocial')->name('edit.social');
+    Route::post('/update/social', 'UpdateSocial')->name('update.social');
+    Route::get('/delete/social/{id}', 'DeleteSocial')->name('delete.social');
+   });
+
+   Route::controller(AboutController::class)->group(function() {
+    Route::get('/all/about', 'AllAbout')->name('all.about');
+    Route::get('/add/about', 'AddAbout')->name('add.about');
+    Route::post('/store/about', 'StoreAbout')->name('store.about');
+    Route::get('/edit/about/{id}', 'EditAbout')->name('edit.about');
+    Route::post('/update/about', 'UpdateAbout')->name('update.about');
+    Route::get('/delete/about/{id}', 'DeleteAbout')->name('delete.about');
    });
 
 

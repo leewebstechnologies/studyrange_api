@@ -220,6 +220,43 @@
                             </li>
 
                             <li>
+                                <a href="#social" data-bs-toggle="collapse">
+                                    <i data-feather="users"></i>
+                                    <span>Manage Social</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="social">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="{{ route('all.socials') }}" class="tp-link">All Social</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('add.social') }}" class="tp-link">Add Social</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="#about" data-bs-toggle="collapse">
+                                    <i data-feather="users"></i>
+                                    <span>Manage About</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="about">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="{{ route('all.about') }}" class="tp-link">All About</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('add.about') }}" class="tp-link">Add About</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+
+                            <li>
                                 <a href="#sidebarError" data-bs-toggle="collapse">
                                     <i data-feather="alert-octagon"></i>
                                     <span> Error Pages </span>
