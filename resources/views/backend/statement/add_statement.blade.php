@@ -10,7 +10,7 @@
 
         <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
             <div class="flex-grow-1">
-                <h4 class="fs-18 fw-semibold m-0">Add Hero</h4>
+                <h4 class="fs-18 fw-semibold m-0">Add Statement</h4>
             </div>
         </div>
 
@@ -19,31 +19,22 @@
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-title mb-0">Add About</h5>
+                        <h5 class="card-title mb-0">Add Statement</h5>
                     </div>
 
                     <div class="card-body">
-                        <form id="myForm" action="{{ route('store.about') }}" method="post" class="row g-3" enctype="multipart/form-data">
+                        <form id="myForm" action="{{ route('store.statement') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
-                            <div class="col-md-6">
-                                <label for="validationDefault01" class="form-label">About Title</label>
-                                <input type="text" name="title" class="form-control">
-                                {{-- <textarea class="form-control" name="phone" placeholder="Required example textarea"></textarea> --}}
-                            </div>
-
-                            <div class="col-md-12">
-                                <label for="validationDefault01" class="form-label">About Story</label>
-                                <div id="quill-editor" style="height: 200px;"></div>
-                                <input type="hidden" name="story" id="story">
+                           <div class="col-md-6">
+                                <label class="form-label">Mission</label>
+                                <div id="mission-editor" style="height: 200px;"></div>
+                                <input type="hidden" name="mission" id="mission">
                             </div>
 
                             <div class="col-md-6">
-                                <label for="validationDefault01" class="form-label">About Image</label>
-                                <input type="file" name="image" class="form-control" id="image">
-                            </div>
-
-                            <div class="col-md-6">
-                                    <img id="showImage" src="{{ url('upload/no_image.jpg') }}" class="rounded-circle avatar-xxl img-thumbnail float-start" alt="image profile">
+                                <label class="form-label">Vision</label>
+                                <div id="vision-editor" style="height: 200px;"></div>
+                                <input type="hidden" name="vision" id="vision">
                             </div>
 
                             <div class="col-12">
@@ -63,17 +54,21 @@
     <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
 
     <script>
-        // Initialize Quill editor
-        var quill = new Quill('#quill-editor', {
+        // Initialize both editors
+        var missionQuill = new Quill('#mission-editor', {
             theme: 'snow'
         });
 
-        // On form submission, update the hidden input value with the editor content
+        var visionQuill = new Quill('#vision-editor', {
+            theme: 'snow'
+        });
+
+        // On submit, assign values separately
         document.getElementById('myForm').onsubmit = function() {
-            document.getElementById('story').value = quill.root.innerHTML;
+            document.getElementById('mission').value = missionQuill.root.innerHTML;
+            document.getElementById('vision').value = visionQuill.root.innerHTML;
         };
     </script>
-
 
     <script>
         $(document).ready(function() {

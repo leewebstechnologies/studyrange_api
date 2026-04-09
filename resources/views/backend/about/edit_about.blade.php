@@ -30,6 +30,7 @@
                             <div class="col-md-6">
                                 <label for="validationDefault01" class="form-label">About Title</label>
                                 <input type="text" name="title" class="form-control" value="{{ $about->title }}">
+                                {{-- <textarea class="form-control" name="phone" placeholder="Required example textarea"></textarea> --}}
                             </div>
 
                             <div class="col-md-12">

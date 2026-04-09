@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\LiveController;
 use App\Http\Controllers\Backend\PartnerController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\SocialController;
+use App\Http\Controllers\Backend\StatementController;
 use App\Http\Controllers\Backend\SuccessController;
 use App\Http\Controllers\Backend\WeekController;
 use App\Http\Controllers\ProfileController;
@@ -143,6 +144,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/about/{id}', 'EditAbout')->name('edit.about');
     Route::post('/update/about', 'UpdateAbout')->name('update.about');
     Route::get('/delete/about/{id}', 'DeleteAbout')->name('delete.about');
+   });
+
+   Route::controller(StatementController::class)->group(function() {
+    Route::get('/all/statements', 'AllStatements')->name('all.statements');
+    Route::get('/add/statement', 'AddStatement')->name('add.statement');
+    Route::post('/store/statement', 'StoreStatement')->name('store.statement');
+    Route::get('/edit/statement/{id}', 'EditStatement')->name('edit.statement');
+    Route::post('/update/statement', 'UpdateStatement')->name('update.statement');
+    Route::get('/delete/statement/{id}', 'DeleteStatement')->name('delete.statement');
    });
 
 

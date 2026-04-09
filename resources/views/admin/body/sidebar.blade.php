@@ -239,7 +239,7 @@
 
                             <li>
                                 <a href="#about" data-bs-toggle="collapse">
-                                    <i data-feather="users"></i>
+                                    <i data-feather="info"></i>
                                     <span>Manage About</span>
                                     <span class="menu-arrow"></span>
                                 </a>
@@ -254,6 +254,25 @@
                                     </ul>
                                 </div>
                             </li>
+
+                            <li>
+                                <a href="#statement" data-bs-toggle="collapse">
+                                    <i data-feather="users"></i>
+                                    <span>Manage Statement</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="statement">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="{{ route('all.statements') }}" class="tp-link">All Statements</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('add.statement') }}" class="tp-link">Add Statement</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
 
 
                             <li>
