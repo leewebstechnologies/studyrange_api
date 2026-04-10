@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\SocialController;
 use App\Http\Controllers\Backend\StatementController;
 use App\Http\Controllers\Backend\SuccessController;
+use App\Http\Controllers\Backend\ValueController;
 use App\Http\Controllers\Backend\WeekController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -153,6 +154,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/statement/{id}', 'EditStatement')->name('edit.statement');
     Route::post('/update/statement', 'UpdateStatement')->name('update.statement');
     Route::get('/delete/statement/{id}', 'DeleteStatement')->name('delete.statement');
+   });
+
+    Route::controller(ValueController::class)->group(function() {
+    Route::get('/all/values', 'AllValues')->name('all.values');
+    Route::get('/add/value', 'AddValue')->name('add.value');
+    Route::post('/store/value', 'StoreValue')->name('store.value');
+    Route::get('/edit/value/{id}', 'EditValue')->name('edit.value');
+    Route::post('/update/value', 'UpdateValue')->name('update.value');
+    Route::get('/delete/value/{id}', 'DeleteValue')->name('delete.value');
    });
 
 

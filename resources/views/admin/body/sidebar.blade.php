@@ -273,6 +273,24 @@
                                 </div>
                             </li>
 
+                            <li>
+                                <a href="#value" data-bs-toggle="collapse">
+                                    <i data-feather="heart"></i>
+                                    <span>Manage Value</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="value">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="{{ route('all.values') }}" class="tp-link">All Values</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('add.value') }}" class="tp-link">Add Value</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
 
 
                             <li>

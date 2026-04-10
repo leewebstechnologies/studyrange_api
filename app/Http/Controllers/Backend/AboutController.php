@@ -10,7 +10,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 
 class AboutController extends Controller
 {
-     public function AllAbout() {
+    public function AllAbout() {
         $about = About::latest()->get();
         return view('backend.about.all_about', compact('about'));
     }

@@ -24,13 +24,12 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('update.about') }}" method="post" class="row g-3" enctype="multipart/form-data">
+                        <form id="myForm" action="{{ route('update.about') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="id" value="{{ $about->id }}">
                             <div class="col-md-6">
                                 <label for="validationDefault01" class="form-label">About Title</label>
-                                <input type="text" name="title" class="form-control" value="{{ $about->title }}">
-                                {{-- <textarea class="form-control" name="phone" placeholder="Required example textarea"></textarea> --}}
+                                <textarea name="title" class="form-control" rows="3">{{ $about->title }}</textarea>
                             </div>
 
                             <div class="col-md-12">
@@ -50,7 +49,7 @@
                             </div>
 
                             <div class="col-md-6">
-                                    <img id="showImage" src="{{ asset($hero->image) }}" class="rounded-circle avatar-xxl img-thumbnail float-start" alt="image profile">
+                                    <img id="showImage" src="{{ asset($about->image) }}" class="rounded-circle avatar-xxl img-thumbnail float-start" alt="image profile">
                             </div>
 
                             <div class="col-12">
@@ -63,6 +62,28 @@
         </div>
     </div>
 </div>
+
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <!-- Include Quill JavaScript -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
+        <script>
+        var quill = new Quill('#quill-editor', {
+            theme: 'snow'
+        });
+
+        // Load existing content
+        var initialContent = document.getElementById('quill-content').innerHTML;
+        if (initialContent) {
+            quill.clipboard.dangerouslyPasteHTML(initialContent);
+        }
+
+        // Submit
+        document.getElementById('myForm').onsubmit = function() {
+            document.getElementById('story').value = quill.root.innerHTML;
+        };
+    </script>
 
     <script>
         $(document).ready(function() {

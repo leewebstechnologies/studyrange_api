@@ -10,7 +10,7 @@
 
         <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
             <div class="flex-grow-1">
-                <h4 class="fs-18 fw-semibold m-0">Add Hero</h4>
+                <h4 class="fs-18 fw-semibold m-0">Add About</h4>
             </div>
         </div>
 
@@ -27,8 +27,7 @@
                             @csrf
                             <div class="col-md-6">
                                 <label for="validationDefault01" class="form-label">About Title</label>
-                                <input type="text" name="title" class="form-control">
-                                {{-- <textarea class="form-control" name="phone" placeholder="Required example textarea"></textarea> --}}
+                               <textarea name="title" class="form-control" rows="3" placeholder="Enter About Title"></textarea>
                             </div>
 
                             <div class="col-md-12">
