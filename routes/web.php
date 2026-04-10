@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\SocialController;
 use App\Http\Controllers\Backend\StatementController;
 use App\Http\Controllers\Backend\SuccessController;
+use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\ValueController;
 use App\Http\Controllers\Backend\WeekController;
 use App\Http\Controllers\ProfileController;
@@ -163,6 +164,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/value/{id}', 'EditValue')->name('edit.value');
     Route::post('/update/value', 'UpdateValue')->name('update.value');
     Route::get('/delete/value/{id}', 'DeleteValue')->name('delete.value');
+   });
+
+    Route::controller(TeamController::class)->group(function() {
+    Route::get('/all/teams', 'AllTeams')->name('all.teams');
+    Route::get('/add/team', 'AddTeam')->name('add.team');
+    Route::post('/store/team', 'StoreTeam')->name('store.team');
+    Route::get('/edit/team/{id}', 'EditTeam')->name('edit.team');
+    Route::post('/update/team', 'UpdateTeam')->name('update.team');
+    Route::get('/delete/team/{id}', 'DeleteTeam')->name('delete.team');
    });
 
 
