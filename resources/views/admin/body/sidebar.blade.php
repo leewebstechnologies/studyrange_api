@@ -364,6 +364,24 @@
                 </li>
 
                 <li>
+                    <a href="#cargo-faq" data-bs-toggle="collapse">
+                        <i data-feather="package"></i>
+                        <span>Manage Cargo FAQ</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="cargo-faq">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.cargo_faqs') }}" class="tp-link">All Cargo FAQs</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.cargo_faq') }}" class="tp-link">Add Cargo FAQ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
                     <a href="#sidebarError" data-bs-toggle="collapse">
                         <i data-feather="alert-octagon"></i>
                         <span> Error Pages </span>

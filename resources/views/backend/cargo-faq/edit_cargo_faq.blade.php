@@ -1,0 +1,105 @@
+@extends('admin.master')
+@section('admin')
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-xxl">
+
+                        <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
+                            <div class="flex-grow-1">
+                                <h4 class="fs-18 fw-semibold m-0">Edit Cargo FAQ</h4>
+                            </div>
+                        </div>
+
+                        <!-- Form Validation -->
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="card-title mb-0">Edit Cargo FAQ</h5>
+                                    </div><!-- end card header -->
+
+                                    <div class="card-body">
+                                        <form id="myForm" action="{{ route('update.cargo_faq') }}" method="post" class="row g-3" enctype="multipart/form-data">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $cargo_faq->id }}">
+                                            <div class="col-md-12">
+                                                <label class="form-label">Question</label>
+                                                <div id="question-editor" style="height: 200px;"></div>
+                                                <input type="hidden" name="question" id="question">
+                                                <div id="question-content" style="display:none;">
+                                                    {!! $cargo_faq->question !!}
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <label class="form-label">Answer</label>
+                                                <div id="answer-editor" style="height: 200px;"></div>
+                                                <input type="hidden" name="answer" id="answer">
+                                                <div id="answer-content" style="display:none;">
+                                                    {!! $cargo_faq->answer !!}
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <button class="btn btn-primary" type="submit">Save Changes</button>
+                                            </div>
+                                        </form>
+                                    </div> 
+                                </div> 
+                            </div> 
+
+                    </div> 
+
+                </div> 
+
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <!-- Include Quill JavaScript -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
+    <script>
+        // Initialize both editors
+        var questionQuill = new Quill('#question-editor', {
+            theme: 'snow'
+        });
+
+        var answerQuill = new Quill('#answer-editor', {
+            theme: 'snow'
+        });
+
+        // Load existing Question content
+        var questionContent = document.getElementById('question-content').innerHTML;
+        if (questionContent) {
+            questionQuill.clipboard.dangerouslyPasteHTML(questionContent);
+        }
+
+        // Load existing Answer content
+        var answerContent = document.getElementById('answer-content').innerHTML;
+        if (answerContent) {
+            answerQuill.clipboard.dangerouslyPasteHTML(answerContent);
+        }
+
+        // Submit both values correctly
+        document.getElementById('myForm').onsubmit = function() {
+            document.getElementById('question').value = questionQuill.root.innerHTML;
+            document.getElementById('answer').value = answerQuill.root.innerHTML;
+        };
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#image').change(function(e) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#showImage').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            })
+        })
+    </script>
+
+@endsection

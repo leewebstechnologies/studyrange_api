@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AcceptanceController;
+use App\Http\Controllers\Backend\Cargo_faqController;
 use App\Http\Controllers\Backend\CargoController;
 use App\Http\Controllers\Backend\ChoiceController;
 use App\Http\Controllers\Backend\ConsultationController;
@@ -203,6 +204,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/cargo/{id}', 'EditCargo')->name('edit.cargo');
     Route::post('/update/cargo', 'UpdateCargo')->name('update.cargo');
     Route::get('/delete/cargo/{id}', 'DeleteCargo')->name('delete.cargo');
+   });
+
+    Route::controller(Cargo_faqController::class)->group(function() {
+    Route::get('/all/cargo_faqs', 'AllCargoFaqs')->name('all.cargo_faqs');
+    Route::get('/add/cargo_faq', 'AddCargoFaq')->name('add.cargo_faq');
+    Route::post('/store/cargo_faq', 'StoreCargoFaq')->name('store.cargo_faq');
+    Route::get('/edit/cargo_faq/{id}', 'EditCargoFaq')->name('edit.cargo_faq');
+    Route::post('/update/cargo_faq', 'UpdateCargoFaq')->name('update.cargo_faq');
+    Route::get('/delete/cargo_faq/{id}', 'DeleteCargoFaq')->name('delete.cargo_faq');
    });
 
 
