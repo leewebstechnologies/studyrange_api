@@ -66,4 +66,5 @@ class ContactoneController extends Controller
 
         return redirect()->back()->with($notification);
     }
+    
 }

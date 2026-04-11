@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\CargoController;
 use App\Http\Controllers\Backend\ChoiceController;
 use App\Http\Controllers\Backend\ConsultationController;
 use App\Http\Controllers\Backend\ContactoneController;
+use App\Http\Controllers\Backend\ContacttwoController;
 use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\FooterController;
 use App\Http\Controllers\Backend\HeroController;
@@ -223,6 +224,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/contactone/{id}', 'EditContactone')->name('edit.contactone');
     Route::post('/update/contactone', 'UpdateContactone')->name('update.contactone');
     Route::get('/delete/contactone/{id}', 'DeleteContactone')->name('delete.contactone');
+   });
+
+    Route::controller(ContacttwoController::class)->group(function() {
+    Route::get('/all/contacttwo', 'AllContacttwo')->name('all.contacttwo');
+    Route::get('/add/contacttwo', 'AddContacttwo')->name('add.contacttwo');
+    Route::post('/store/contacttwo', 'StoreContacttwo')->name('store.contacttwo');
+    Route::get('/edit/contacttwo/{id}', 'EditContacttwo')->name('edit.contacttwo');
+    Route::post('/update/contacttwo', 'UpdateContacttwo')->name('update.contacttwo');
+    Route::get('/delete/contacttwo/{id}', 'DeleteContacttwo')->name('delete.contacttwo');
    });
 
 

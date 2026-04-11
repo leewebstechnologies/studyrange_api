@@ -390,10 +390,28 @@
                     <div class="collapse" id="contactone">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('all.contactone') }}" class="tp-link">All Contacts</a>
+                                <a href="{{ route('all.contacttwo') }}" class="tp-link">All Contacts</a>
                             </li>
                             <li>
-                                <a href="{{ route('add.contactone') }}" class="tp-link">Add Contact</a>
+                                <a href="{{ route('add.contacttwo') }}" class="tp-link">Add Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#contacttwo" data-bs-toggle="collapse">
+                        <i data-feather="package"></i>
+                        <span>Manage ContactTwo</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="contacttwo">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.contacttwo') }}" class="tp-link">All Contacts</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.contacttwo') }}" class="tp-link">Add Contact</a>
                             </li>
                         </ul>
                     </div>
