@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\ChoiceController;
 use App\Http\Controllers\Backend\ConsultationController;
 use App\Http\Controllers\Backend\FooterController;
 use App\Http\Controllers\Backend\HeroController;
+use App\Http\Controllers\Backend\JourneyController;
 use App\Http\Controllers\Backend\LiveController;
 use App\Http\Controllers\Backend\PartnerController;
 use App\Http\Controllers\Backend\ServiceController;
@@ -173,6 +174,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/team/{id}', 'EditTeam')->name('edit.team');
     Route::post('/update/team', 'UpdateTeam')->name('update.team');
     Route::get('/delete/team/{id}', 'DeleteTeam')->name('delete.team');
+   });
+
+    Route::controller(JourneyController::class)->group(function() {
+    Route::get('/all/journeys', 'AllJourneys')->name('all.journeys');
+    Route::get('/add/journey', 'AddJourney')->name('add.journey');
+    Route::post('/store/journey', 'StoreJourney')->name('store.journey');
+    Route::get('/edit/journey/{id}', 'EditJourney')->name('edit.journey');
+    Route::post('/update/journey', 'UpdateJourney')->name('update.journey');
+    Route::get('/delete/journey/{id}', 'DeleteJourney')->name('delete.journey');
    });
 
 

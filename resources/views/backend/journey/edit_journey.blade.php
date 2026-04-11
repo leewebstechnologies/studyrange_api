@@ -3,6 +3,7 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 <div class="content">
 
     <!-- Start Content-->
@@ -10,7 +11,7 @@
 
         <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
             <div class="flex-grow-1">
-                <h4 class="fs-18 fw-semibold m-0">Add Journey</h4>
+                <h4 class="fs-18 fw-semibold m-0">Edit Journey</h4>
             </div>
         </div>
 
@@ -19,25 +20,26 @@
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-title mb-0">Add Journey</h5>
+                        <h5 class="card-title mb-0">Edit Journey</h5>
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('store.live') }}" method="post" class="row g-3" enctype="multipart/form-data">
+                        <form id="myForm" action="{{ route('update.journey') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
+                            <input type="hidden" name="id" value="{{ $journey->id }}">
                             <div class="col-md-6">
-                                <label for="validationDefault01" class="form-label">Live Acceptance Name</label>
-                                <input type="text" name="name" class="form-control">
+                                <label for="validationDefault01" class="form-label">Journey Year</label>
+                                <input type="text" name="year" class="form-control" value="{{ $journey->year }}">
                             </div>
 
                             <div class="col-md-6">
-                                <label for="validationDefault01" class="form-label">Live Acceptance School</label>
-                                <input type="text" name="school" class="form-control">
+                                <label for="validationDefault01" class="form-label">Journey Title</label>
+                                 <input type="text" name="title" class="form-control" value="{{ $journey->title }}">
                             </div>
 
                             <div class="col-md-6">
-                                <label for="validationDefault01" class="form-label">Live Acceptance Time</label>
-                                <input type="text" name="time" class="form-control">
+                                <label for="validationDefault01" class="form-label">Journey Description</label>
+                                <textarea name="description" class="form-control" rows="3">{{ $journey->description }}</textarea>
                             </div>
 
                             <div class="col-12">

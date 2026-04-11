@@ -309,6 +309,24 @@
                                 </div>
                             </li>
 
+                            <li>
+                                <a href="#journey" data-bs-toggle="collapse">
+                                    <i data-feather="map"></i>
+                                    <span>Manage Journey</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="journey">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="{{ route('all.journeys') }}" class="tp-link">All Journeys</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('add.journey') }}" class="tp-link">Add Journey</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
 
 
                             <li>

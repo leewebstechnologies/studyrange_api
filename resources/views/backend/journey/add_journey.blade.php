@@ -23,21 +23,21 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('store.live') }}" method="post" class="row g-3" enctype="multipart/form-data">
+                        <form action="{{ route('store.journey') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
                             <div class="col-md-6">
-                                <label for="validationDefault01" class="form-label">Live Acceptance Name</label>
-                                <input type="text" name="name" class="form-control">
+                                <label for="validationDefault01" class="form-label">Journey Year</label>
+                                <input type="text" name="year" class="form-control">
                             </div>
 
                             <div class="col-md-6">
-                                <label for="validationDefault01" class="form-label">Live Acceptance School</label>
-                                <input type="text" name="school" class="form-control">
+                                <label for="validationDefault01" class="form-label">Journey Title</label>
+                                <input type="text" name="title" class="form-control">
                             </div>
 
                             <div class="col-md-6">
-                                <label for="validationDefault01" class="form-label">Live Acceptance Time</label>
-                                <input type="text" name="time" class="form-control">
+                                <label for="validationDefault01" class="form-label">Journey Description</label>
+                                 <textarea name="description" class="form-control" rows="5" placeholder="Enter description"></textarea>
                             </div>
 
                             <div class="col-12">
