@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\Cargo_faqController;
 use App\Http\Controllers\Backend\CargoController;
 use App\Http\Controllers\Backend\ChoiceController;
 use App\Http\Controllers\Backend\ConsultationController;
+use App\Http\Controllers\Backend\ContactoneController;
 use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\FooterController;
 use App\Http\Controllers\Backend\HeroController;
@@ -213,6 +214,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/cargo_faq/{id}', 'EditCargoFaq')->name('edit.cargo_faq');
     Route::post('/update/cargo_faq', 'UpdateCargoFaq')->name('update.cargo_faq');
     Route::get('/delete/cargo_faq/{id}', 'DeleteCargoFaq')->name('delete.cargo_faq');
+   });
+
+    Route::controller(ContactoneController::class)->group(function() {
+    Route::get('/all/contactone', 'AllContactone')->name('all.contactone');
+    Route::get('/add/contactone', 'AddContactone')->name('add.contactone');
+    Route::post('/store/contactone', 'StoreContactone')->name('store.contactone');
+    Route::get('/edit/contactone/{id}', 'EditContactone')->name('edit.contactone');
+    Route::post('/update/contactone', 'UpdateContactone')->name('update.contactone');
+    Route::get('/delete/contactone/{id}', 'DeleteContactone')->name('delete.contactone');
    });
 
 
