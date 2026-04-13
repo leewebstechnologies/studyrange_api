@@ -62,4 +62,10 @@ class WeekController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    // Week API
+    public function ApiAllWeeks() {
+        $week = Week::latest()->get();
+        return $week;
+    }
 }

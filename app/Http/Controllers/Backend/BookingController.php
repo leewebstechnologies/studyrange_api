@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Message;
+use App\Models\Booking;
 // use Illuminate\Http\Request;
 
-class MessageController extends Controller
+class BookingController extends Controller
 {
-    public function Message() {
-        $message = Message::latest()->get();
-        return view('backend.message.all_messages', compact('message'));
+     public function Booking() {
+        $booking = Booking::latest()->get();
+        return view('backend.booking.all_bookings', compact('booking'));
     }
 
     // Message API
@@ -26,8 +26,8 @@ class MessageController extends Controller
     //         return response()->json(['errors' => $validator->errors()], 422);
     //     }
 
-    //     Contact::create($request->all());
-    //     return response()->json(['message' => 'Contact sent successfully'], 201);
+    //     Booking::create($request->all());
+    //     return response()->json(['message' => 'Booking created successfully'], 201);
     // }
 
 }

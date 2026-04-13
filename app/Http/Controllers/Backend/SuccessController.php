@@ -115,4 +115,10 @@ class SuccessController extends Controller
     }
     // End Method
 
+    // Hero API
+    public function ApiAllSuccesses() {
+        $success = Success::latest()->get();
+        return $success;
+    }
+
 }

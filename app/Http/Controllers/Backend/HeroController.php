@@ -118,4 +118,10 @@ class HeroController extends Controller
     }
     // End Method
 
+    // Hero API
+    public function ApiAllHeroes() {
+        $hero = Hero::latest()->get();
+        return $hero;
+    }
+
 }

@@ -62,4 +62,10 @@ class ValueController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    // Value API
+    public function ApiAllValues() {
+        $value = Value::latest()->get();
+        return $value;
+    }
 }

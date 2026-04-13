@@ -453,6 +453,21 @@
                 </li>
 
                 <li>
+                    <a href="#booking" data-bs-toggle="collapse">
+                        <i data-feather="mail"></i>
+                        <span>Booking</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="booking">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('booking') }}" class="tp-link">Booking</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
                     <a href="#sidebarMaps" data-bs-toggle="collapse">
                         <i data-feather="map"></i>
                         <span> Maps </span>

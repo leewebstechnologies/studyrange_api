@@ -118,4 +118,10 @@ class AcceptanceController extends Controller
     }
     // End Method
 
+    // Acceptance API
+    public function ApiAllAcceptances() {
+        $acceptance = Acceptance::latest()->get();
+        return $acceptance;
+    }
+
 }

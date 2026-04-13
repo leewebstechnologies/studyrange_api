@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AcceptanceController;
+use App\Http\Controllers\Backend\BookingController;
 use App\Http\Controllers\Backend\Cargo_faqController;
 use App\Http\Controllers\Backend\CargoController;
 use App\Http\Controllers\Backend\ChoiceController;
@@ -248,6 +249,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/counselor/{id}', 'EditCounselor')->name('edit.counselor');
     Route::post('/update/counselor', 'UpdateCounselor')->name('update.counselor');
     Route::get('/delete/counselor/{id}', 'DeleteCounselor')->name('delete.counselor');
+   });
+
+    Route::controller(BookingController::class)->group(function() {
+        Route::get('/booking', 'Booking')->name('booking');
    });
 
 

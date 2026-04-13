@@ -64,4 +64,10 @@ class FooterController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    // Footer API
+    public function ApiAllFooters() {
+        $footer = Footer::latest()->get();
+        return $footer;
+    }
 }

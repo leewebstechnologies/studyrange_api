@@ -60,4 +60,10 @@ class ConsultationController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    // Consultation API
+    public function ApiAllConsultations() {
+        $consultation = Consultation::latest()->get();
+        return $consultation;
+    }
 }

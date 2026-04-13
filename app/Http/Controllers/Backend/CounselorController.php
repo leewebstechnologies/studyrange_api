@@ -9,8 +9,8 @@ use Illuminate\Http\Request;
 class CounselorController extends Controller
 {
      public function AllCounselors() {
-        $counselors = Counselor::latest()->get();
-        return view('backend.counselor.all_counselors', compact('counselors'));
+        $counselor = Counselor::latest()->get();
+        return view('backend.counselor.all_counselors', compact('counselor'));
     }
 
     public function AddCounselor() {

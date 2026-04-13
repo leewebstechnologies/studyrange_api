@@ -64,4 +64,11 @@ class LiveController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    // Live API
+    public function ApiAllLives() {
+        $live = Live::latest()->get();
+        return $live;
+    }
+    
 }

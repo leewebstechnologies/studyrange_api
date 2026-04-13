@@ -115,4 +115,10 @@ class ChoiceController extends Controller
     }
     // End Method
 
+    // Choice API
+    public function ApiAllChoices() {
+        $choice = Choice::latest()->get();
+        return $choice;
+    }
+
 }

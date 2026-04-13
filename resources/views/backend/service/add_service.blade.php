@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('store.service') }}" method="post" class="row g-3" enctype="multipart/form-data">
+                        <form action="{{ route('store.service') }}" method="post" class="row g-3">
                             @csrf
                             <div class="col-md-6">
                                 <label for="validationDefault01" class="form-label">Service Title</label>
@@ -33,15 +33,6 @@
                             <div class="col-md-6">
                                 <label for="validationDefault01" class="form-label">Service Description</label>
                                 <input type="text" name="desc" class="form-control">
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="validationDefault01" class="form-label">Service Image</label>
-                                <input type="file" name="image" class="form-control" id="image">
-                            </div>
-
-                            <div class="col-md-6">
-                                    <img id="showImage" src="{{ url('upload/no_image.jpg') }}" class="rounded-circle avatar-xxl img-thumbnail float-start" alt="image profile">
                             </div>
 
                             <div class="col-12">
@@ -54,17 +45,5 @@
         </div>
     </div>
 </div>
-
-    <script>
-        $(document).ready(function() {
-            $('#image').change(function(e) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('#showImage').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(e.target.files['0']);
-            })
-        })
-    </script>
 
 @endsection

@@ -66,4 +66,10 @@ class SocialController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    // Social API
+    public function ApiAllSocials() {
+        $social = Social::latest()->get();
+        return $social;
+    }
 }

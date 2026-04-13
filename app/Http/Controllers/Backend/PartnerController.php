@@ -62,4 +62,12 @@ class PartnerController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    // Partner API
+    public function ApiAllPartners() {
+        $partner = Partner::latest()->get();
+        return $partner;
+    }
+
+
 }

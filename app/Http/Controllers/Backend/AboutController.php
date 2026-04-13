@@ -99,7 +99,7 @@ class AboutController extends Controller
     }
     // End Method
 
-    public function DeleteHero($id) {
+    public function DeleteAbout($id) {
         $item = About::find($id);
         $img = $item->image;
         unlink($img);
@@ -114,5 +114,11 @@ class AboutController extends Controller
         return redirect()->back()->with($notification);
     }
     // End Method
+
+    // About API
+    public function ApiAllAbout() {
+        $about = About::latest()->get();
+        return $about;
+    }
 
 }

@@ -62,4 +62,10 @@ class StatementController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    // Statement API
+    public function ApiAllStatements() {
+        $statement = Statement::latest()->get();
+        return $statement;
+    }
 }
