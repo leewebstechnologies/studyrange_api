@@ -418,18 +418,18 @@
                 </li>
 
                 <li>
-                    <a href="#sidebarError" data-bs-toggle="collapse">
-                        <i data-feather="alert-octagon"></i>
-                        <span> Error Pages </span>
+                    <a href="#counselor" data-bs-toggle="collapse">
+                        <i data-feather="user"></i>
+                        <span>Manage Counselor</span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="sidebarError">
+                    <div class="collapse" id="counselor">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="error-404.html" class="tp-link">Error 404</a>
+                                <a href="{{ route('all.counselors') }}" class="tp-link">All Counselors</a>
                             </li>
                             <li>
-                                <a href="error-500.html" class="tp-link">Error 500</a>
+                                <a href="{{ route('add.counselor') }}" class="tp-link">Add Counselor</a>
                             </li>
                         </ul>
                     </div>
@@ -438,18 +438,15 @@
                 <li class="menu-title mt-2">General</li>
 
                 <li>
-                    <a href="#sidebarBaseui" data-bs-toggle="collapse">
-                        <i data-feather="package"></i>
-                        <span> Components </span>
+                    <a href="#message" data-bs-toggle="collapse">
+                        <i data-feather="mail"></i>
+                        <span>Message</span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="sidebarBaseui">
+                    <div class="collapse" id="message">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="ui-accordions.html" class="tp-link">Accordions</a>
-                            </li>
-                            <li>
-                                <a href="ui-alerts.html" class="tp-link">Alerts</a>
+                                <a href="{{ route('message') }}" class="tp-link">Message</a>
                             </li>
                         </ul>
                     </div>

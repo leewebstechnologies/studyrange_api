@@ -9,11 +9,13 @@ use App\Http\Controllers\Backend\ChoiceController;
 use App\Http\Controllers\Backend\ConsultationController;
 use App\Http\Controllers\Backend\ContactoneController;
 use App\Http\Controllers\Backend\ContacttwoController;
+use App\Http\Controllers\Backend\CounselorController;
 use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\FooterController;
 use App\Http\Controllers\Backend\HeroController;
 use App\Http\Controllers\Backend\JourneyController;
 use App\Http\Controllers\Backend\LiveController;
+use App\Http\Controllers\Backend\MessageController;
 use App\Http\Controllers\Backend\PartnerController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\SocialController;
@@ -233,6 +235,19 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/contacttwo/{id}', 'EditContacttwo')->name('edit.contacttwo');
     Route::post('/update/contacttwo', 'UpdateContacttwo')->name('update.contacttwo');
     Route::get('/delete/contacttwo/{id}', 'DeleteContacttwo')->name('delete.contacttwo');
+   });
+
+    Route::controller(MessageController::class)->group(function() {
+        Route::get('/message', 'Message')->name('message');
+   });
+
+   Route::controller(CounselorController::class)->group(function() {
+    Route::get('/all/counselors', 'AllCounselors')->name('all.counselors');
+    Route::get('/add/counselor', 'AddCounselor')->name('add.counselor');
+    Route::post('/store/counselor', 'StoreCounselor')->name('store.counselor');
+    Route::get('/edit/counselor/{id}', 'EditCounselor')->name('edit.counselor');
+    Route::post('/update/counselor', 'UpdateCounselor')->name('update.counselor');
+    Route::get('/delete/counselor/{id}', 'DeleteCounselor')->name('delete.counselor');
    });
 
 
