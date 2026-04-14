@@ -64,4 +64,10 @@ class JourneyController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    // Journey API
+    public function ApiAllJourneys() {
+        $journey = Journey::latest()->get();
+        return $journey;
+    }
 }

@@ -23,19 +23,19 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('store.choice') }}" method="post" class="row g-3" enctype="multipart/form-data">
+                        <form id="myForm" action="{{ route('store.choice') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Choice Title</label>
                                 <input type="text" name="title" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Choice Description</label>
                                 <input type="text" name="description" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Choice Image</label>
                                 <input type="file" name="image" class="form-control" id="image">
                             </div>
@@ -66,5 +66,49 @@
             })
         })
     </script>
+
+    <script type="text/javascript">
+    $(document).ready(function (){
+        $('#myForm').validate({
+            rules: {
+                title: {
+                    required : true,
+                },
+                description: {
+                    required : true,
+                },
+                image: {
+                    required : true,
+                },
+
+            },
+            messages :{
+                title: {
+                    required : 'Please Enter Title',
+                },
+                description: {
+                    required : 'Please Enter Description',
+                },
+                image: {
+                    required : 'Please Upload Image',
+                },
+
+
+            },
+            errorElement : 'span',
+            errorPlacement: function (error,element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+        });
+    });
+
+</script>
 
 @endsection

@@ -23,29 +23,29 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('store.team') }}" method="post" class="row g-3" enctype="multipart/form-data">
+                        <form id="myForm" action="{{ route('store.team') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Team Name</label>
                                 <input type="text" name="name" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Team Position</label>
                                 <input type="text" name="position" class="form-control">
                             </div>
 
-                            <div class="col-md-12">
+                            <div class="col-md-12 form-group">
                                 <label for="validationDefault01" class="form-label">Team Description</label>
                                 <textarea class="form-control" name="description" placeholder="Enter team description"></textarea>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Team Image</label>
                                 <input type="file" name="image" class="form-control" id="image">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                     <img id="showImage" src="{{ url('upload/no_image.jpg') }}" class="rounded-circle avatar-xxl img-thumbnail float-start" alt="image profile">
                             </div>
 
@@ -71,5 +71,55 @@
             })
         })
     </script>
+
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $('#myForm').validate({
+                rules: {
+                    name: {
+                        required: true,
+                    },
+                    position: {
+                        required: true,
+                    },
+                    description: {
+                        required: true,
+                    },
+                    image: {
+                        required: true,
+                    },
+                },
+
+                messages: {
+                    name: {
+                        required: 'Please Enter Team Name',
+                    },
+                    position: {
+                        required: 'Please Enter Team Position',
+                    },
+                    description: {
+                        required: 'Please Enter Team Description',
+                    },
+                    image: {
+                        required: 'Please Upload Team Image',
+                    },
+                },
+
+                errorElement: 'span',
+                errorPlacement: function (error, element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight: function(element){
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function(element){
+                    $(element).removeClass('is-invalid');
+                },
+            });
+        });
+    </script>
+
+
 
 @endsection

@@ -23,24 +23,24 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('store.hero') }}" method="post" class="row g-3" enctype="multipart/form-data">
+                        <form id="myForm" action="{{ route('store.hero') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Hero Client</label>
                                 <input type="text" name="client" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Hero Rating</label>
                                 <input type="text" name="rating" class="form-control">
                             </div>
 
-                            <div class="col-md-12">
+                            <div class="col-md-12 form-group">
                                 <label for="validationDefault01" class="form-label">Hero Phone</label>
                                 <textarea class="form-control" name="phone" placeholder="Required example textarea"></textarea>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Hero Image</label>
                                 <input type="file" name="image" class="form-control" id="image">
                             </div>
@@ -69,7 +69,54 @@
                 }
                 reader.readAsDataURL(e.target.files['0']);
             })
-        })
+        });
+
+         $(document).ready(function (){
+        $('#myForm').validate({
+            rules: {
+                client: {
+                    required : true,
+                },
+                rating: {
+                    required : true,
+                },
+                 phone: {
+                    required : true,
+                },
+                 image: {
+                    required : true,
+                },
+
+            },
+            messages :{
+                client: {
+                    required : 'Please Enter Client Name',
+                },
+                rating: {
+                    required : 'Please Enter Hero Rating',
+                },
+                phone: {
+                    required : 'Please Enter Hero Phone',
+                },
+                image: {
+                    required : 'Please Upload Hero Image',
+                },
+
+            },
+            errorElement : 'span',
+            errorPlacement: function (error,element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+        });
+    });
+
     </script>
 
 @endsection

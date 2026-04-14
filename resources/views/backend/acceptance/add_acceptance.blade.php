@@ -23,29 +23,29 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('store.acceptance') }}" method="post" class="row g-3" enctype="multipart/form-data">
+                        <form id="myForm" action="{{ route('store.acceptance') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Acceptance Name</label>
                                 <input type="text" name="name" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Acceptance Text</label>
                                 <input type="text" name="text" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Acceptance Time</label>
                                 <input type="text" name="time" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Acceptance Image</label>
                                 <input type="file" name="image" class="form-control" id="image">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                     <img id="showImage" src="{{ url('upload/no_image.jpg') }}" class="rounded-circle avatar-xxl img-thumbnail float-start" alt="image profile">
                             </div>
 
@@ -70,6 +70,49 @@
                 reader.readAsDataURL(e.target.files['0']);
             })
         })
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $('#myForm').validate({
+                rules: {
+                    name: {
+                        required : true,
+                    },
+                    text: {
+                        required : true,
+                    },
+                    time: {
+                        required : true,
+                    }
+
+                },
+                messages :{
+                    name: {
+                        required : 'Please Enter Name',
+                    },
+                    text: {
+                        required : 'Please Enter Text',
+                    },
+                    time: {
+                        required : 'Please Enter Time',
+                    },
+
+                },
+                errorElement : 'span',
+                errorPlacement: function (error,element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight : function(element, errorClass, validClass){
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight : function(element, errorClass, validClass){
+                    $(element).removeClass('is-invalid');
+                },
+            });
+        });
+
     </script>
 
 @endsection

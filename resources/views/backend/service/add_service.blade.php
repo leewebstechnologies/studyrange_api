@@ -23,14 +23,14 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('store.service') }}" method="post" class="row g-3">
+                        <form id="myForm" action="{{ route('store.service') }}" method="post" class="row g-3">
                             @csrf
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Service Title</label>
                                 <input type="text" name="title" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Service Description</label>
                                 <input type="text" name="desc" class="form-control">
                             </div>
@@ -45,5 +45,42 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function (){
+        $('#myForm').validate({
+            rules: {
+                title: {
+                    required : true,
+                },
+                desc: {
+                    required : true,
+                },
+
+            },
+            messages :{
+                title: {
+                    required : 'Please Enter Service Title',
+                },
+                desc: {
+                    required : 'Please Enter Service Description',
+                },
+
+            },
+            errorElement : 'span',
+            errorPlacement: function (error,element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+        });
+    });
+
+</script>
 
 @endsection

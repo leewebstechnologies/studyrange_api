@@ -62,4 +62,10 @@ class CargoController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    // Cargo API
+    public function ApiAllCargoes() {
+        $cargo = Cargo::latest()->get();
+        return $cargo;
+    }
 }

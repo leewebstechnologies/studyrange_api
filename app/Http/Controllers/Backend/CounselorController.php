@@ -64,4 +64,10 @@ class CounselorController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    // Counselor API
+    public function ApiAllCounselors() {
+        $counselor = Counselor::latest()->get();
+        return $counselor;
+    }
 }

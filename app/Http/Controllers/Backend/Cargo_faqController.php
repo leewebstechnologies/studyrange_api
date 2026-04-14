@@ -62,4 +62,10 @@ class Cargo_faqController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    // Cargo_faq API
+    public function ApiAllCargoFaqs() {
+        $cargo_faq = Cargo_faq::latest()->get();
+        return $cargo_faq;
+    }
 }

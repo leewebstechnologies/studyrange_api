@@ -25,13 +25,13 @@
                     <div class="card-body">
                         <form id="myForm" action="{{ route('store.cargo_faq') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
-                           <div class="col-md-6">
+                           <div class="col-md-6 form-group">
                                 <label class="form-label">Question</label>
                                 <div id="question-editor" style="height: 200px;"></div>
                                 <input type="hidden" name="question" id="question">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label class="form-label">Answer</label>
                                 <div id="answer-editor" style="height: 200px;"></div>
                                 <input type="hidden" name="answer" id="answer">
@@ -80,6 +80,43 @@
                 reader.readAsDataURL(e.target.files['0']);
             })
         })
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $('#myForm').validate({
+                rules: {
+                    question: {
+                        required: true,
+                    },
+                    answer: {
+                        required: true,
+                    },
+                },
+
+                messages: {
+                    question: {
+                        required: 'Please Enter Question',
+                    },
+                    answer: {
+                        required: 'Please Enter Answer',
+                    },
+                    
+                },
+
+                errorElement: 'span',
+                errorPlacement: function (error, element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight: function(element){
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function(element){
+                    $(element).removeClass('is-invalid');
+                },
+            });
+        });
     </script>
 
 @endsection

@@ -23,24 +23,24 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('store.contactone') }}" method="post" class="row g-3" enctype="multipart/form-data">
+                        <form id="myForm" action="{{ route('store.contactone') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Call</label>
                                 <input type="text" name="call" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Email</label>
                                 <input type="email" name="email" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">WhatsApp</label>
                                 <input type="text" name="whatsapp" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Hours</label>
                                 <input type="text" name="hours" class="form-control">
                             </div>
@@ -66,6 +66,54 @@
                 reader.readAsDataURL(e.target.files['0']);
             })
         })
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $('#myForm').validate({
+                rules: {
+                    call: {
+                        required: true,
+                    },
+                    email: {
+                        required: true,
+                    },
+                    whatsapp: {
+                        required: true,
+                    },
+                    hours: {
+                        required: true,
+                    },
+                },
+
+                messages: {
+                    call: {
+                        required: 'Please Enter Call',
+                    },
+                    email: {
+                        required: 'Please Enter Email',
+                    },
+                    whatsapp: {
+                        required: 'Please Enter WhatsApp',
+                    },
+                    hours: {
+                        required: 'Please Enter Hours',
+                    },
+                },
+
+                errorElement: 'span',
+                errorPlacement: function (error, element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight: function(element){
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function(element){
+                    $(element).removeClass('is-invalid');
+                },
+            });
+        });
     </script>
 
 @endsection

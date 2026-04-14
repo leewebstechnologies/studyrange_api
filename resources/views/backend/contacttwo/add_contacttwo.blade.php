@@ -23,29 +23,29 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('store.contacttwo') }}" method="post" class="row g-3" enctype="multipart/form-data">
+                        <form id="myForm" action="{{ route('store.contacttwo') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Office</label>
                                 <input type="text" name="office" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Address</label>
                                 <input type="text" name="address" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Phone</label>
                                 <input type="text" name="phone" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Email</label>
                                 <input type="email" name="email" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Hours</label>
                                 <input type="text" name="hours" class="form-control">
                             </div>
@@ -71,6 +71,63 @@
                 reader.readAsDataURL(e.target.files['0']);
             })
         })
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $('#myForm').validate({
+                rules: {
+                    office: {
+                        required: true,
+                    },
+                    address: {
+                        required: true,
+                    },
+                    phone: {
+                        required: true,
+                    },
+                    email: {
+                        required: true,
+                    },
+                    hours: {
+                        required: true,
+                    },
+                },
+
+                messages: {
+                    office: {
+                        required: 'Please Enter Office',
+                    },
+                    address: {
+                        required: 'Please Enter Address',
+                    },
+                    phone: {
+                        required: 'Please Enter Phone',
+                    },
+                    email: {
+                        required: 'Please Enter Email',
+                    },
+                    hours: {
+                        required: 'Please Enter Hours',
+                    },
+                    image: {
+                        required: 'Please Upload Team Image',
+                    },
+                },
+
+                errorElement: 'span',
+                errorPlacement: function (error, element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight: function(element){
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function(element){
+                    $(element).removeClass('is-invalid');
+                },
+            });
+        });
     </script>
 
 @endsection

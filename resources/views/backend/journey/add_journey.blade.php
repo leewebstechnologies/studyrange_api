@@ -23,19 +23,19 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('store.journey') }}" method="post" class="row g-3" enctype="multipart/form-data">
+                        <form id="myForm" action="{{ route('store.journey') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Journey Year</label>
                                 <input type="text" name="year" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Journey Title</label>
                                 <input type="text" name="title" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Journey Description</label>
                                  <textarea name="description" class="form-control" rows="5" placeholder="Enter description"></textarea>
                             </div>
@@ -61,6 +61,48 @@
                 reader.readAsDataURL(e.target.files['0']);
             })
         })
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $('#myForm').validate({
+                rules: {
+                    year: {
+                        required: true,
+                    },
+                    title: {
+                        required: true,
+                    },
+                    description: {
+                        required: true,
+                    },
+                },
+
+                messages: {
+                    year: {
+                        required: 'Please Enter Journey Year',
+                    },
+                    title: {
+                        required: 'Please Enter Journey Title',
+                    },
+                    description: {
+                        required: 'Please Enter Journey Description',
+                    },
+                },
+
+                errorElement: 'span',
+                errorPlacement: function (error, element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight: function(element){
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function(element){
+                    $(element).removeClass('is-invalid');
+                },
+            });
+        });
     </script>
 
 @endsection

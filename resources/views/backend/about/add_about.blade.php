@@ -27,18 +27,18 @@
                             @csrf
                             <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">About Title</label>
-                               <textarea name="title" class="form-control" rows="3" placeholder="Enter About Title" required></textarea>
+                               <textarea name="title" class="form-control" rows="3" placeholder="Enter About Title"></textarea>
                             </div>
 
-                            <div class="col-md-12>
+                            <div class="col-md-12 form-group">
                                 <label for="validationDefault01" class="form-label">About Story</label>
                                 <div id="quill-editor" style="height: 200px;" class="form-group"></div>
-                                <input type="hidden" name="story" id="story" required>
+                                <input type="hidden" name="story" id="story">
                             </div>
 
                             <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">About Image</label>
-                                <input type="file" name="image" class="form-control" id="image" required>
+                                <input type="file" name="image" class="form-control" id="image">
                             </div>
 
                             <div class="col-md-6 form-group">

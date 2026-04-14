@@ -23,14 +23,14 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('store.week') }}" method="post" class="row g-3" enctype="multipart/form-data">
+                        <form id="myForm" action="{{ route('store.week') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Week Number</label>
                                 <input type="text" name="number" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Week Amount</label>
                                 <input type="text" name="amount" class="form-control">
                             </div>
@@ -57,5 +57,42 @@
             })
         })
     </script>
+
+    <script type="text/javascript">
+    $(document).ready(function (){
+        $('#myForm').validate({
+            rules: {
+                number: {
+                    required : true,
+                },
+                amount: {
+                    required : true,
+                },
+
+            },
+            messages :{
+                number: {
+                    required : 'Please Enter Week Number',
+                },
+                amount: {
+                    required : 'Please Enter Week Amount',
+                },
+
+            },
+            errorElement : 'span',
+            errorPlacement: function (error,element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+        });
+    });
+
+</script>
 
 @endsection

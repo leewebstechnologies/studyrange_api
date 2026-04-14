@@ -23,19 +23,19 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('store.footer') }}" method="post" class="row g-3" enctype="multipart/form-data">
+                        <form id="myForm" action="{{ route('store.footer') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Phone One</label>
                                 <input type="text" name="phone_one" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Phone Two</label>
                                 <input type="text" name="phone_two" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Email</label>
                                 <input type="email" name="email" class="form-control">
                             </div>
@@ -61,6 +61,51 @@
                 reader.readAsDataURL(e.target.files['0']);
             })
         })
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $('#myForm').validate({
+                rules: {
+                    phone_one: {
+                        required : true,
+                    },
+                    phone_two: {
+                        required : true,
+                    },
+                    email: {
+                        required : true,
+                        email : true,
+                    },
+
+                },
+                messages :{
+                    phone_one: {
+                        required : 'Please Enter Phone One',
+                    },
+                    phone_two: {
+                        required : 'Please Enter Phone Two',
+                    },
+                    email: {
+                        required : 'Please Enter Email',
+                        email : 'Please Enter Valid Email',
+                    },
+
+                },
+                errorElement : 'span',
+                errorPlacement: function (error,element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight : function(element, errorClass, validClass){
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight : function(element, errorClass, validClass){
+                    $(element).removeClass('is-invalid');
+                },
+            });
+        });
+
     </script>
 
 @endsection

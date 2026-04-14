@@ -62,4 +62,10 @@ class FaqController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    // Faq API
+    public function ApiAllFaqs() {
+        $faq = Faq::latest()->get();
+        return $faq;
+    }
 }

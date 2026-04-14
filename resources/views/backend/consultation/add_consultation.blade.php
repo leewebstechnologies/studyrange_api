@@ -23,9 +23,9 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('store.consultation') }}" method="post" class="row g-3" enctype="multipart/form-data">
+                        <form id="myForm" action="{{ route('store.consultation') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Consultation Phone</label>
                                 <input type="text" name="phone" class="form-control">
                             </div>
@@ -52,5 +52,36 @@
             })
         })
     </script>
+
+    <script type="text/javascript">
+    $(document).ready(function (){
+        $('#myForm').validate({
+            rules: {
+                phone: {
+                    required : true,
+                },
+
+            },
+            messages :{
+                phone: {
+                    required : 'Please Enter Phone Number',
+                },
+
+            },
+            errorElement : 'span',
+            errorPlacement: function (error,element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+        });
+    });
+
+</script>
 
 @endsection

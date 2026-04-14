@@ -23,19 +23,19 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('store.counselor') }}" method="post" class="row g-3" enctype="multipart/form-data">
+                        <form id="myForm" action="{{ route('store.counselor') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Counselor Name</label>
                                 <input type="text" name="name" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Counselor Section</label>
                                 <input type="text" name="section" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Counselor Experience</label>
                                 <input type="text" name="experience" class="form-control">
                             </div>
@@ -61,6 +61,48 @@
                 reader.readAsDataURL(e.target.files['0']);
             })
         })
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $('#myForm').validate({
+                rules: {
+                    name: {
+                        required: true,
+                    },
+                    section: {
+                        required: true,
+                    },
+                    experience: {
+                        required: true,
+                    },
+                },
+
+                messages: {
+                    name: {
+                        required: 'Please Enter Team Name',
+                    },
+                    section: {
+                        required: 'Please Enter Team Section',
+                    },
+                    experience: {
+                        required: 'Please Enter Team Experience',
+                    },
+                },
+
+                errorElement: 'span',
+                errorPlacement: function (error, element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight: function(element){
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function(element){
+                    $(element).removeClass('is-invalid');
+                },
+            });
+        });
     </script>
 
 @endsection

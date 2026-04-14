@@ -118,4 +118,10 @@ class TeamController extends Controller
     }
     // End Method
 
+    // Team API
+    public function ApiAllTeams() {
+        $team = Team::latest()->get();
+        return $team;
+    }
+
 }

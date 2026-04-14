@@ -68,4 +68,10 @@ class ContacttwoController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    // Contacttwo API
+    public function ApiAllContacttwo() {
+        $contacttwo = Contacttwo::latest()->get();
+        return $contacttwo;
+    }
 }

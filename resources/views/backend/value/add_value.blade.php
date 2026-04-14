@@ -25,12 +25,12 @@
                     <div class="card-body">
                         <form id="myForm" action="{{ route('store.value') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
-                           <div class="col-md-6">
+                           <div class="col-md-6 form-group">
                                 <label class="form-label">Title</label>
                                  <input type="text" name="title" class="form-control" placeholder="Enter Title">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label class="form-label">Description</label>
                                 <textarea name="description" class="form-control" rows="5" placeholder="Enter description"></textarea>
                             </div>
@@ -56,6 +56,43 @@
                 reader.readAsDataURL(e.target.files['0']);
             })
         })
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $('#myForm').validate({
+                rules: {
+                    title: {
+                        required : true,
+                    },
+                    description: {
+                        required : true,
+                    },
+
+                },
+                messages :{
+                    title: {
+                        required : 'Please Enter Title',
+                    },
+                    description: {
+                        required : 'Please Enter Description',
+                    },
+
+                },
+                errorElement : 'span',
+                errorPlacement: function (error,element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight : function(element, errorClass, validClass){
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight : function(element, errorClass, validClass){
+                    $(element).removeClass('is-invalid');
+                },
+            });
+        });
+
     </script>
 
 @endsection

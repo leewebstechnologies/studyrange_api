@@ -23,14 +23,14 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('store.partner') }}" method="post" class="row g-3" enctype="multipart/form-data">
+                        <form id="myForm" action="{{ route('store.partner') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">University Partner Name</label>
                                 <input type="text" name="name" class="form-control">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">University Partner Rank</label>
                                 <input type="text" name="rank" class="form-control">
                             </div>
@@ -56,6 +56,43 @@
                 reader.readAsDataURL(e.target.files['0']);
             })
         })
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $('#myForm').validate({
+                rules: {
+                    name: {
+                        required : true,
+                    },
+                    rank: {
+                        required : true,
+                    }
+
+                },
+                messages :{
+                    name: {
+                        required : 'Please Enter Name',
+                    },
+                    rank: {
+                        required : 'Please Enter Rank',
+                    },
+
+                },
+                errorElement : 'span',
+                errorPlacement: function (error,element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight : function(element, errorClass, validClass){
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight : function(element, errorClass, validClass){
+                    $(element).removeClass('is-invalid');
+                },
+            });
+        });
+
     </script>
 
 @endsection

@@ -66,5 +66,11 @@ class ContactoneController extends Controller
 
         return redirect()->back()->with($notification);
     }
-    
+
+    // Contactone API
+    public function ApiAllContactOne() {
+        $contactone = Contactone::latest()->get();
+        return $contactone;
+    }
+
 }
