@@ -42,7 +42,7 @@
                                     <td>{{ $item->client }}</td>
                                     <td>{{ $item->rating }}</td>
                                     <td>{{ $item->phone }}</td>
-                                    <td><img src="{{ asset($item->image) }}" alt="" style="width: 70px; height: 40px;"></td>
+                                    <td><img src="{{ asset($item->image) }}" alt="hero" style="width: 70px; height: 40px;"></td>
                                     <td>
                                         <div class="d-flex gap-2">
                                         <a href="{{ route('edit.hero', $item->id) }}" class="btn btn-success btn-sm">

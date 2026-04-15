@@ -37,6 +37,15 @@
                                 <input type="text" name="desc" class="form-control" value="{{ $service->desc }}">
                             </div>
 
+                            <div class="col-md-6 form-group">
+                                <label for="validationDefault01" class="form-label">Service Image</label>
+                                <input type="file" name="image" class="form-control">
+                            </div>
+
+                             <div class="col-md-6">
+                                    <img id="showImage" src="{{ asset($service->image) }}" class="rounded-circle avatar-xxl img-thumbnail float-start" alt="image profile">
+                            </div>
+
                             <div class="col-12">
                                 <button class="btn btn-primary" type="submit">Save Changes</button>
                             </div>

@@ -30,6 +30,7 @@
                                 <th>S/N</th>
                                 <th>Title</th>
                                 <th>Description</th>
+                                <th>Image</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -39,6 +40,9 @@
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $item->title }}</td>
                                     <td>{{ $item->desc }}</td>
+                                    <td>
+                                        <img src="{{ asset($item->image) }}" alt="{{ $item->title }}" width="100">
+                                    </td>
                                     <td>
                                         <div class="d-flex gap-2">
                                         <a href="{{ route('edit.service', $item->id) }}" class="btn btn-success btn-sm">

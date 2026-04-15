@@ -5,60 +5,111 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 class ServiceController extends Controller
 {
-    public function AllServices() {
+     public function AllServices() {
         $service = Service::latest()->get();
         return view('backend.service.all_services', compact('service'));
     }
+    // End Method
 
     public function AddService() {
         return view('backend.service.add_service');
     }
+    // End Method
 
     public function StoreService(Request $request) {
+         if ($request->file('image')) {
+            $image = $request->file('image');
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $img = $manager->read($image);
+            $img->resize(1124, 750)->save(public_path('upload/service/'.$name_gen));
+            $save_url = 'upload/service/'.$name_gen;
 
-        Service::create([
-            'title' => $request->title,
-            'desc' => $request->desc,
-        ]);
+            Service::create([
+                'title' => $request->title,
+                'desc' => $request->desc,
+                'image' => $save_url,
+            ]);
+        }
 
-        $notification = [
+          $notification = array(
             'message' => 'Service Inserted Successfully!',
             'alert-type' => 'success'
-        ];
+        );
 
         return redirect()->route('all.services')->with($notification);
+
     }
+    // End Method
 
     public function EditService($id) {
-        $service = Service::findOrFail($id);
+        $service = Service::find($id);
         return view('backend.service.edit_service', compact('service'));
     }
+    // End Method
 
     public function UpdateService(Request $request) {
-        $service = Service::findOrFail($request->id);
-        $service->update([
-            'title' => $request->title,
-            'desc' => $request->desc,
-        ]);
+        $service_id = $request->id;
+        $service = Service::findOrFail($service_id);
 
-        $notification = [
-            'message' => 'Service Updated Successfully!',
-            'alert-type' => 'success'
-        ];
+        if ($request->file('image')) {
+
+            $image = $request->file('image');
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $img = $manager->read($image);
+            $img->resize(1124, 750)->save(public_path('upload/service/'.$name_gen));
+            $save_url = 'upload/service/'.$name_gen;
+
+            // delete old image safely
+            if ($service->image && file_exists(public_path($service->image))) {
+                unlink(public_path($service->image));
+            }
+
+            $service->update([
+                'title' => $request->title,
+                'desc' => $request->desc,
+                'image' => $save_url,
+            ]);
+
+            $notification = [
+                'message' => 'Service Updated With Image Successfully!',
+                'alert-type' => 'success'
+            ];
+
+        } else {
+
+            $service->update([
+                'title' => $request->title,
+                'desc' => $request->desc,
+            ]);
+
+            $notification = [
+                'message' => 'Service Updated Without Image Successfully!',
+                'alert-type' => 'success'
+            ];
+        }
 
         return redirect()->route('all.services')->with($notification);
     }
+    // End Method
 
     public function DeleteService($id) {
-        Service::findOrFail($id)->delete();
+        $item = Service::find($id);
+        $img = $item->image;
+        unlink($img);
 
-        $notification = [
+        Service::find($id)->delete();
+
+         $notification = array(
             'message' => 'Service Deleted Successfully!',
             'alert-type' => 'success'
-        ];
+        );
 
         return redirect()->back()->with($notification);
     }
