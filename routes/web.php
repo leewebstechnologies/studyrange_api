@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AcceptanceController;
 use App\Http\Controllers\Backend\BookingController;
+use App\Http\Controllers\Backend\CardController;
 use App\Http\Controllers\Backend\Cargo_faqController;
 use App\Http\Controllers\Backend\CargoController;
 use App\Http\Controllers\Backend\ChoiceController;
@@ -48,6 +49,15 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::middleware('auth')->group(function () {
+
+    Route::controller(CardController::class)->group(function() {
+    Route::get('/all/cards', 'AllCards')->name('all.cards');
+    Route::get('/add/card', 'AddCard')->name('add.card');
+    Route::post('/store/card', 'StoreCard')->name('store.card');
+    Route::get('/edit/card/{id}', 'EditCard')->name('edit.card');
+    Route::post('/update/card', 'UpdateCard')->name('update.card');
+    Route::get('/delete/card/{id}', 'DeleteCard')->name('delete.card');
+   });
 
    Route::controller(HeroController::class)->group(function() {
     Route::get('/all/heroes', 'AllHeroes')->name('all.heroes');

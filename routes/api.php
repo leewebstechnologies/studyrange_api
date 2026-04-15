@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AcceptanceController;
+use App\Http\Controllers\Backend\CardController;
 use App\Http\Controllers\Backend\Cargo_faqController;
 use App\Http\Controllers\Backend\CargoController;
 use App\Http\Controllers\Backend\ChoiceController;
@@ -53,3 +54,4 @@ Route::get('/cargo_faq', [Cargo_faqController::class, 'ApiAllCargoFaqs']);
 Route::get('/contactone', [ContactoneController::class, 'ApiAllContactOne']);
 Route::get('/contacttwo', [ContacttwoController::class, 'ApiAllContactTwo']);
 Route::get('/counselor', [CounselorController::class, 'ApiAllCounselors']);
+Route::get('/card', [CardController::class, 'ApiAllCards']);

@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form id="myForm" action="{{ route('store.service') }}" method="post" class="row g-3">
+                        <form id="myForm" action="{{ route('store.service') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
                             <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Service Title</label>
@@ -65,6 +65,9 @@
                 desc: {
                     required : true,
                 },
+                image: {
+                    required : true,
+                },
 
             },
             messages :{
@@ -73,6 +76,9 @@
                 },
                 desc: {
                     required : 'Please Enter Service Description',
+                },
+                image: {
+                    required : 'Please Upload Service Image',
                 },
 
             },

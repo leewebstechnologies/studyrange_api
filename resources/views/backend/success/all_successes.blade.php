@@ -40,7 +40,7 @@
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->school }}</td>
-                                    <td><img src="{{ asset($item->image) }}" alt="" style="width: 70px; height: 40px;"></td>
+                                    <td><img src="{{ asset($item->image) }}" alt="success" style="width: 70px; height: 40px;"></td>
                                     <td>
                                         <div class="d-flex gap-2">
                                         <a href="{{ route('edit.success', $item->id) }}" class="btn btn-success btn-sm">

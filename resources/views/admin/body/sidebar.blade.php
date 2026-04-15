@@ -36,6 +36,25 @@
                 <li class="menu-title">Pages</li>
 
                 <li>
+                    <a href="#card" data-bs-toggle="collapse">
+                        <i data-feather="layout"></i>
+                        <span>Manage Card</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="card">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.cards') }}" class="tp-link">All Cards</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.card') }}" class="tp-link">Add Card</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
                     <a href="#hero" data-bs-toggle="collapse">
                         <i data-feather="users"></i>
                         <span> Manage Hero </span>
