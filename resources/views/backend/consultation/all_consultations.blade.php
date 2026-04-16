@@ -28,7 +28,9 @@
                             <thead>
                             <tr>
                                 <th>S/N</th>
+                                <th>Text</th>
                                 <th>Phone</th>
+                                <th>Link</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -36,7 +38,9 @@
                                 @foreach ($consultation as $key=> $item)
                                 <tr>
                                     <td>{{ $key+1 }}</td>
+                                    <td>{{ $item->text }}</td>
                                     <td>{{ $item->phone }}</td>
+                                    <td>{{ $item->link }}</td>
                                     <td>
                                         <div class="d-flex gap-2">
                                             <a href="{{ route('edit.consultation', $item->id) }}" class="btn btn-success btn-sm">

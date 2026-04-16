@@ -26,6 +26,10 @@
                         <form id="myForm" action="{{ route('store.footer') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
                             <div class="col-md-6 form-group">
+                                <label for="validationDefault01" class="form-label">Footer Text</label>
+                                <textarea class="form-control form-group" name="text" placeholder="Required example textarea"></textarea>
+                            </div>
+                            <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Phone One</label>
                                 <input type="text" name="phone_one" class="form-control">
                             </div>
@@ -67,6 +71,9 @@
         $(document).ready(function (){
             $('#myForm').validate({
                 rules: {
+                    text: {
+                        required : true,
+                    },
                     phone_one: {
                         required : true,
                     },
@@ -80,6 +87,9 @@
 
                 },
                 messages :{
+                    text: {
+                        required : 'Please Enter Footer Text',
+                    },
                     phone_one: {
                         required : 'Please Enter Phone One',
                     },

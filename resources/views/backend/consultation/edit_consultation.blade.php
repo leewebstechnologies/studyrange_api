@@ -28,8 +28,17 @@
                             @csrf
                             <input type="hidden" name="id" value="{{ $consultation->id }}">
                             <div class="col-md-6">
+                                <label for="validationDefault01" class="form-label">Consultation Text</label>
+                                <textarea name="text" class="form-control" rows="3">{{ $consultation->text }}</textarea>
+                            </div>
+                            <div class="col-md-6">
                                 <label for="validationDefault01" class="form-label">Consultation Phone</label>
                                 <input type="text" name="phone" class="form-control" value="{{ $consultation->phone }}">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="validationDefault01" class="form-label">Consultation Link</label>
+                                <input type="text" name="link" class="form-control" value="{{ $consultation->link }}">
                             </div>
 
                             <div class="col-12">

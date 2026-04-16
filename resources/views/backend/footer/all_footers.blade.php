@@ -28,6 +28,7 @@
                             <thead>
                             <tr>
                                 <th>S/N</th>
+                                <th>Text</th>
                                 <th>PhoneOne</th>
                                 <th>PhoneTwo</th>
                                 <th>Email</th>
@@ -38,6 +39,7 @@
                                 @foreach ($footer as $key=> $item)
                                 <tr>
                                     <td>{{ $key+1 }}</td>
+                                    <td>{{ $item->text }}</td>
                                     <td>{{ $item->phone_one }}</td>
                                     <td>{{ $item->phone_two }}</td>
                                     <td>{{ $item->email }}</td>

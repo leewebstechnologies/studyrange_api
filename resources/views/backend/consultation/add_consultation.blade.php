@@ -25,9 +25,20 @@
                     <div class="card-body">
                         <form id="myForm" action="{{ route('store.consultation') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
+
+                            <div class="col-md-6 form-group">
+                                <label for="validationDefault01" class="form-label">Consultation Text</label>
+                                <textarea class="form-control form-group" name="text" placeholder="Required example textarea"></textarea>
+                            </div>
+
                             <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Consultation Phone</label>
                                 <input type="text" name="phone" class="form-control">
+                            </div>
+
+                            <div class="col-md-6 form-group">
+                                <label for="validationDefault01" class="form-label">Consultation Link</label>
+                                <input type="text" name="link" class="form-control">
                             </div>
 
                             <div class="col-12">
@@ -57,15 +68,28 @@
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
+                text: {
+                    required : true,
+                },
                 phone: {
+                    required : true,
+                },
+                link: {
                     required : true,
                 },
 
             },
             messages :{
+                text: {
+                    required : 'Please Enter Consultation Text',
+                },
                 phone: {
                     required : 'Please Enter Phone Number',
                 },
+                link: {
+                    required : 'Please Enter Consultation Link',
+                },
+
 
             },
             errorElement : 'span',

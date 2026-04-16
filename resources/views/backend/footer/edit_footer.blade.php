@@ -28,6 +28,11 @@
                             @csrf
                             <input type="hidden" name="id" value="{{ $footer->id }}">
                             <div class="col-md-6">
+                                <label for="validationDefault01" class="form-label">Footer Text</label>
+                                <textarea name="text" class="form-control" rows="3">{{ $footer->text }}</textarea>
+                            </div>
+
+                            <div class="col-md-6">
                                 <label for="validationDefault01" class="form-label">Phone One</label>
                                 <input type="text" name="phone_one" class="form-control" value="{{ $footer->phone_one }}">
                             </div>

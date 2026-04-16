@@ -20,7 +20,9 @@ class ConsultationController extends Controller
     public function StoreConsultation(Request $request) {
 
         Consultation::create([
+            'text' => $request->text,
             'phone' => $request->phone,
+            'link' => $request->link,
         ]);
 
         $notification = [
@@ -39,7 +41,9 @@ class ConsultationController extends Controller
     public function UpdateConsultation(Request $request) {
         $consultation = Consultation::findOrFail($request->id);
         $consultation->update([
-            'phone' => $request->phone
+            'text' => $request->text,
+            'phone' => $request->phone,
+            'link' => $request->link,
         ]);
 
         $notification = [

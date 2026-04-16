@@ -20,6 +20,7 @@ class FooterController extends Controller
     public function StoreFooter(Request $request) {
 
         Footer::create([
+            'text' => $request->text,
             'phone_one' => $request->phone_one,
             'phone_two' => $request->phone_two,
             'email' => $request->email,
@@ -41,6 +42,7 @@ class FooterController extends Controller
     public function UpdateFooter(Request $request) {
         $footer = Footer::findOrFail($request->id);
         $footer->update([
+            'text' => $request->text,
             'phone_one' => $request->phone_one,
             'phone_two' => $request->phone_two,
             'email' => $request->email,

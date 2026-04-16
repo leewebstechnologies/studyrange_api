@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('footers', function (Blueprint $table) {
             $table->id();
+            $table->text('text')->nullable();
             $table->string('phone_one')->nullable();
             $table->string('phone_two')->nullable();
             $table->string('email')->nullable();

@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('consultations', function (Blueprint $table) {
             $table->id();
-            $table->string('phone');
+            $table->text('text');
+            $table->string('phone')->nullable();
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }
