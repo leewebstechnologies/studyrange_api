@@ -39,7 +39,7 @@
                                 <tr>
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $item->title }}</td>
-                                    <td>{{ $item->story }}</td>
+                                    <td>{!! $item->story !!}</td>
                                     <td><img src="{{ asset($item->image) }}" alt="" style="width: 70px; height: 40px;"></td>
                                     <td>
                                         <div class="d-flex gap-2">

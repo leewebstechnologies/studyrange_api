@@ -48,7 +48,7 @@ class HeroController extends Controller
     }
     // End Method
 
-    public function EditHero($id) {
+    public function EditHero(int $id) {
         $hero = Hero::find($id);
         return view('backend.hero.edit_hero', compact('hero'));
     }
@@ -102,7 +102,7 @@ class HeroController extends Controller
     }
     // End Method
 
-    public function DeleteHero($id) {
+    public function DeleteHero(int $id) {
         $item = Hero::find($id);
         $img = $item->image;
         unlink($img);

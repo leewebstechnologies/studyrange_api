@@ -48,7 +48,7 @@ class AcceptanceController extends Controller
     }
     // End Method
 
-    public function EditAcceptance($id) {
+    public function EditAcceptance(int $id) {
         $acceptance = Acceptance::find($id);
         return view('backend.acceptance.edit_acceptance', compact('acceptance'));
     }
@@ -102,7 +102,7 @@ class AcceptanceController extends Controller
     }
     // End Method
 
-    public function DeleteAcceptance($id) {
+    public function DeleteAcceptance(int $id) {
         $item = Acceptance::find($id);
         $img = $item->image;
         unlink($img);

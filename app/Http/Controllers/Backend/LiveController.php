@@ -33,7 +33,7 @@ class LiveController extends Controller
         return redirect()->route('all.lives')->with($notification);
     }
 
-    public function EditLive($id) {
+    public function EditLive(int $id) {
         $live = Live::findOrFail($id);
         return view('backend.live.edit_live', compact('live'));
     }
@@ -54,7 +54,7 @@ class LiveController extends Controller
         return redirect()->route('all.lives')->with($notification);
     }
 
-    public function DeleteLive($id) {
+    public function DeleteLive(int $id) {
         Live::findOrFail($id)->delete();
 
         $notification = [

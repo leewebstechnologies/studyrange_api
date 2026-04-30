@@ -47,7 +47,7 @@ class AboutController extends Controller
     }
     // End Method
 
-    public function EditAbout($id) {
+    public function EditAbout(int $id) {
         $about = About::find($id);
         return view('backend.about.edit_about', compact('about'));
     }
@@ -99,7 +99,7 @@ class AboutController extends Controller
     }
     // End Method
 
-    public function DeleteAbout($id) {
+    public function DeleteAbout(int $id) {
         $item = About::find($id);
         $img = $item->image;
         unlink($img);

@@ -275,6 +275,24 @@
                 </li>
 
                 <li>
+                    <a href="#about_rating" data-bs-toggle="collapse">
+                        <i data-feather="info"></i>
+                        <span>Manage About Rating</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="about_rating">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.about_ratings') }}" class="tp-link">All Rating</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.about_rating') }}" class="tp-link">Add Rating</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
                     <a href="#statement" data-bs-toggle="collapse">
                         <i data-feather="users"></i>
                         <span>Manage Statement</span>
@@ -347,9 +365,135 @@
                 </li>
 
                 <li>
+                    <a href="#ourpartners" data-bs-toggle="collapse">
+                        <i data-feather="users"></i>
+                        <span>Manage Our Partners</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="ourpartners">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.ourpartners') }}" class="tp-link">All Our Partners</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.ourpartner') }}" class="tp-link">Add Our Partner</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#standard" data-bs-toggle="collapse">
+                        <i data-feather="award"></i>
+                        <span>Manage Standard</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="standard">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.standards') }}" class="tp-link">All Standards</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.standard') }}" class="tp-link">Add Standard</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#ourservice" data-bs-toggle="collapse">
+                        <i data-feather="tool"></i>
+                        <span>Manage Our Service</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="ourservice">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.ourservices') }}" class="tp-link">All Our Services</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.ourservice') }}" class="tp-link">Add Our Service</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#admissionservice" data-bs-toggle="collapse">
+                        <i data-feather="book-open"></i>
+                        <span>Manage Admission Service</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="admissionservice">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.admissionservices') }}" class="tp-link">All Admission Services</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.admissionservice') }}" class="tp-link">Add Admission Service</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#admissionprocess" data-bs-toggle="collapse">
+                        <i data-feather="book-open"></i>
+                        <span>Manage Admission Process</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="admissionprocess">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.admissionprocesses') }}" class="tp-link">All Admission Processes</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.admissionprocess') }}" class="tp-link">Add Admission Process</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#admissionreq" data-bs-toggle="collapse">
+                        <i data-feather="help-circle"></i>
+                        <span>Manage Admission Requirement</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="admissionreq">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.admissionrequirements') }}" class="tp-link">All Admission Requirements</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.admissionrequirement') }}" class="tp-link">Add Admission Requirement</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#admissiontimeline" data-bs-toggle="collapse">
+                        <i data-feather="help-circle"></i>
+                        <span>Manage Admission Timeline</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="admissiontimeline">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.admissiontimelines') }}" class="tp-link">All Admission Timelines</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.admissiontimeline') }}" class="tp-link">Add Admission Timeline</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
                     <a href="#faq" data-bs-toggle="collapse">
                         <i data-feather="help-circle"></i>
-                        <span>Manage FAQ</span>
+                        <span>Manage Admission FAQ</span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="faq">
@@ -359,6 +503,259 @@
                             </li>
                             <li>
                                 <a href="{{ route('add.faq') }}" class="tp-link">Add FAQ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#financialadvice" data-bs-toggle="collapse">
+                        <i data-feather="credit-card"></i>
+                        <span>Manage Financial Advice</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="financialadvice">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.financialadvice') }}" class="tp-link">All Financial Advice</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.financialadvice') }}" class="tp-link">Add Financial Advice</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#financialprocess" data-bs-toggle="collapse">
+                        <i data-feather="credit-card"></i>
+                        <span>Manage Financial Process</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="financialprocess">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.financialprocesses') }}" class="tp-link">All Financial Processes</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.financialprocess') }}" class="tp-link">Add Financial Process</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#financialrequirement" data-bs-toggle="collapse">
+                        <i data-feather="credit-card"></i>
+                        <span>Manage Financial Requirement</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="financialrequirement">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.financialrequirements') }}" class="tp-link">All Financial Requirements</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.financialrequirement') }}" class="tp-link">Add Financial Requirement</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#financialtimeline" data-bs-toggle="collapse">
+                        <i data-feather="credit-card"></i>
+                        <span>Manage Financial Timeline</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="financialtimeline">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.financialtimelines') }}" class="tp-link">All Financial Timelines</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.financialtimeline') }}" class="tp-link">Add Financial Timeline</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#financialfaq" data-bs-toggle="collapse">
+                        <i data-feather="credit-card"></i>
+                        <span>Manage Financial Faq</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="financialfaq">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.financialfaqs') }}" class="tp-link">All Financial Faqs</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.financialfaq') }}" class="tp-link">Add Financial Faq</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#studentvisa" data-bs-toggle="collapse">
+                        <i data-feather="credit-card"></i>
+                        <span>Manage Student Visa</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="studentvisa">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.studentvisas') }}" class="tp-link">All Student Visas</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.studentvisa') }}" class="tp-link">Add Student Visa</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#studentprocess" data-bs-toggle="collapse">
+                        <i data-feather="credit-card"></i>
+                        <span>Manage Student Process</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="studentprocess">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.studentprocesses') }}" class="tp-link">All Student Processes</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.studentprocess') }}" class="tp-link">Add Student Process</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#studentrequirement" data-bs-toggle="collapse">
+                        <i data-feather="credit-card"></i>
+                        <span>Manage Student Requirement</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="studentrequirement">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.studentrequirements') }}" class="tp-link">All Student Requirements</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.studentrequirement') }}" class="tp-link">Add Student Requirement</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#studenttimeline" data-bs-toggle="collapse">
+                        <i data-feather="credit-card"></i>
+                        <span>Manage Student Timeline</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="studenttimeline">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.studenttimelines') }}" class="tp-link">All Student Timelines</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.studenttimeline') }}" class="tp-link">Add Student Timeline</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+
+                <li>
+                    <a href="#studentfaq" data-bs-toggle="collapse">
+                        <i data-feather="credit-card"></i>
+                        <span>Manage Student Faq</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="studentfaq">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.studentfaqs') }}" class="tp-link">All Student Faqs</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.studentfaq') }}" class="tp-link">Add Student Faq</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#platformstat" data-bs-toggle="collapse">
+                        <i data-feather="credit-card"></i>
+                        <span>Manage Platform Stat</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="platformstat">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.platformstats') }}" class="tp-link">All Platform Stats</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.platformstat') }}" class="tp-link">Add Platform Stat</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#school" data-bs-toggle="collapse">
+                        <i data-feather="credit-card"></i>
+                        <span>Manage School</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="school">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.schools') }}" class="tp-link">All Schools</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.school') }}" class="tp-link">Add School</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#floating" data-bs-toggle="collapse">
+                        <i data-feather="credit-card"></i>
+                        <span>Manage Floating Button</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="floating">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.floatingbuttons') }}" class="tp-link">All Floating Buttons</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.floatingbutton') }}" class="tp-link">Add Floating Button</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#scholarshiptop" data-bs-toggle="collapse">
+                        <i data-feather="credit-card"></i>
+                        <span>Manage Scholarship Top</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="scholarshiptop">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.scholarshiptops') }}" class="tp-link">All Scholarship Tops</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.scholarshiptop') }}" class="tp-link">Add Scholarship Top</a>
                             </li>
                         </ul>
                     </div>

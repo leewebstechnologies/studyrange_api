@@ -32,7 +32,7 @@ class PartnerController extends Controller
         return redirect()->route('all.partners')->with($notification);
     }
 
-    public function EditPartner($id) {
+    public function EditPartner(int $id) {
         $partner = Partner::findOrFail($id);
         return view('backend.partner.edit_partner', compact('partner'));
     }
@@ -52,7 +52,7 @@ class PartnerController extends Controller
         return redirect()->route('all.partners')->with($notification);
     }
 
-    public function DeletePartner($id) {
+    public function DeletePartner(int $id) {
         Partner::findOrFail($id)->delete();
 
         $notification = [
@@ -68,6 +68,5 @@ class PartnerController extends Controller
         $partner = Partner::latest()->get();
         return $partner;
     }
-
 
 }

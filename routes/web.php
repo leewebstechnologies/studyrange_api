@@ -1,8 +1,13 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\About_ratingController;
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AcceptanceController;
+use App\Http\Controllers\Backend\AdmissionserviceController;
+use App\Http\Controllers\Backend\AdmissionprocessController;
+use App\Http\Controllers\Backend\AdmissionrequirementController;
+use App\Http\Controllers\Backend\AdmissiontimelineController;
 use App\Http\Controllers\Backend\BookingController;
 use App\Http\Controllers\Backend\CardController;
 use App\Http\Controllers\Backend\Cargo_faqController;
@@ -13,15 +18,31 @@ use App\Http\Controllers\Backend\ContactoneController;
 use App\Http\Controllers\Backend\ContacttwoController;
 use App\Http\Controllers\Backend\CounselorController;
 use App\Http\Controllers\Backend\FaqController;
+use App\Http\Controllers\Backend\FinancialadviceController;
+use App\Http\Controllers\Backend\FinancialfaqController;
+use App\Http\Controllers\Backend\FinancialprocessController;
+use App\Http\Controllers\Backend\FinancialrequirementController;
+use App\Http\Controllers\Backend\FinancialtimelineController;
+use App\Http\Controllers\Backend\FloatingbuttonController;
 use App\Http\Controllers\Backend\FooterController;
 use App\Http\Controllers\Backend\HeroController;
 use App\Http\Controllers\Backend\JourneyController;
 use App\Http\Controllers\Backend\LiveController;
 use App\Http\Controllers\Backend\MessageController;
+use App\Http\Controllers\Backend\OurpartnerController;
+use App\Http\Controllers\Backend\OurserviceController;
 use App\Http\Controllers\Backend\PartnerController;
+use App\Http\Controllers\Backend\PlatformstatController;
+use App\Http\Controllers\Backend\SchoolController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\SocialController;
+use App\Http\Controllers\Backend\StandardController;
 use App\Http\Controllers\Backend\StatementController;
+use App\Http\Controllers\Backend\StudentfaqController;
+use App\Http\Controllers\Backend\StudentprocessController;
+use App\Http\Controllers\Backend\StudentrequirementController;
+use App\Http\Controllers\Backend\StudenttimelineController;
+use App\Http\Controllers\Backend\StudentvisaController;
 use App\Http\Controllers\Backend\SuccessController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\ValueController;
@@ -167,6 +188,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/delete/about/{id}', 'DeleteAbout')->name('delete.about');
    });
 
+    Route::controller(About_ratingController::class)->group(function() {
+    Route::get('/all/about_ratings', 'AllAbout_ratings')->name('all.about_ratings');
+    Route::get('/add/about_rating', 'AddAbout_rating')->name('add.about_rating');
+    Route::post('/store/about_rating', 'StoreAbout_rating')->name('store.about_rating');
+    Route::get('/edit/about_rating/{id}', 'EditAbout_rating')->name('edit.about_rating');
+    Route::post('/update/about_rating', 'UpdateAbout_rating')->name('update.about_rating');
+    Route::get('/delete/about_rating/{id}', 'DeleteAbout_rating')->name('delete.about_rating');
+   });
+
    Route::controller(StatementController::class)->group(function() {
     Route::get('/all/statements', 'AllStatements')->name('all.statements');
     Route::get('/add/statement', 'AddStatement')->name('add.statement');
@@ -203,6 +233,53 @@ Route::middleware('auth')->group(function () {
     Route::get('/delete/journey/{id}', 'DeleteJourney')->name('delete.journey');
    });
 
+    Route::controller(OurpartnerController::class)->group(function() {
+    Route::get('/all/ourpartners', 'AllOurpartners')->name('all.ourpartners');
+    Route::get('/add/ourpartner', 'AddOurpartner')->name('add.ourpartner');
+    Route::post('/store/ourpartner', 'StoreOurpartner')->name('store.ourpartner');
+    Route::get('/edit/ourpartner/{id}', 'EditOurpartner')->name('edit.ourpartner');
+    Route::post('/update/ourpartner', 'UpdateOurpartner')->name('update.ourpartner');
+    Route::get('/delete/ourpartner/{id}', 'DeleteOurpartner')->name('delete.ourpartner');
+   });
+
+    Route::controller(StandardController::class)->group(function() {
+    Route::get('/all/standards', 'AllStandards')->name('all.standards');
+    Route::get('/add/standard', 'AddStandard')->name('add.standard');
+    Route::post('/store/standard', 'StoreStandard')->name('store.standard');
+    Route::get('/edit/standard/{id}', 'EditStandard')->name('edit.standard');
+    Route::post('/update/standard', 'UpdateStandard')->name('update.standard');
+    Route::get('/delete/standard/{id}', 'DeleteStandard')->name('delete.standard');
+   });
+
+
+    Route::controller(OurserviceController::class)->group(function() {
+    Route::get('/all/ourservices', 'AllOurservices')->name('all.ourservices');
+    Route::get('/add/ourservice', 'AddOurservice')->name('add.ourservice');
+    Route::post('/store/ourservice', 'StoreOurservice')->name('store.ourservice');
+    Route::get('/edit/ourservice/{id}', 'EditOurservice')->name('edit.ourservice');
+    Route::post('/update/ourservice', 'UpdateOurservice')->name('update.ourservice');
+    Route::get('/delete/ourservice/{id}', 'DeleteOurservice')->name('delete.ourservice');
+   });
+
+    Route::controller(AdmissionserviceController::class)->group(function() {
+    Route::get('/all/admissionservices', 'AllAdmissionservices')->name('all.admissionservices');
+    Route::get('/add/admissionservice', 'AddAdmissionservice')->name('add.admissionservice');
+    Route::post('/store/admissionservice', 'StoreAdmissionservice')->name('store.admissionservice');
+    Route::get('/edit/admissionservice/{id}', 'EditAdmissionservice')->name('edit.admissionservice');
+    Route::post('/update/admissionservice', 'UpdateAdmissionservice')->name('update.admissionservice');
+    Route::get('/delete/admissionservice/{id}', 'DeleteAdmissionservice')->name('delete.admissionservice');
+   });
+
+    Route::controller(AdmissionprocessController::class)->group(function() {
+    Route::get('/all/admissionprocesses', 'AllAdmissionprocesses')->name('all.admissionprocesses');
+    Route::get('/add/admissionprocess', 'AddAdmissionprocess')->name('add.admissionprocess');
+    Route::post('/store/admissionprocess', 'StoreAdmissionprocess')->name('store.admissionprocess');
+    Route::get('/edit/admissionprocess/{id}', 'EditAdmissionprocess')->name('edit.admissionprocess');
+    Route::post('/update/admissionprocess', 'UpdateAdmissionprocess')->name('update.admissionprocess');
+    Route::get('/delete/admissionprocess/{id}', 'DeleteAdmissionprocess')->name('delete.admissionprocess');
+   });
+
+
    Route::controller(FaqController::class)->group(function() {
     Route::get('/all/faqs', 'AllFaqs')->name('all.faqs');
     Route::get('/add/faq', 'AddFaq')->name('add.faq');
@@ -210,6 +287,133 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/faq/{id}', 'EditFaq')->name('edit.faq');
     Route::post('/update/faq', 'UpdateFaq')->name('update.faq');
     Route::get('/delete/faq/{id}', 'DeleteFaq')->name('delete.faq');
+   });
+
+   Route::controller(AdmissionrequirementController::class)->group(function() {
+    Route::get('/all/admissionrequirements', 'AllAdmissionrequirements')->name('all.admissionrequirements');
+    Route::get('/add/admissionrequirement', 'AddAdmissionrequirement')->name('add.admissionrequirement');
+    Route::post('/store/admissionrequirement', 'StoreAdmissionrequirement')->name('store.admissionrequirement');
+    Route::get('/edit/admissionrequirement/{id}', 'EditAdmissionrequirement')->name('edit.admissionrequirement');
+    Route::post('/update/admissionrequirement', 'UpdateAdmissionrequirement')->name('update.admissionrequirement');
+    Route::get('/delete/admissionrequirement/{id}', 'DeleteAdmissionrequirement')->name('delete.admissionrequirement');
+   });
+
+
+   Route::controller(AdmissiontimelineController::class)->group(function() {
+    Route::get('/all/admissiontimelines', 'AllAdmissiontimelines')->name('all.admissiontimelines');
+    Route::get('/add/admissiontimeline', 'AddAdmissiontimeline')->name('add.admissiontimeline');
+    Route::post('/store/admissiontimeline', 'StoreAdmissiontimeline')->name('store.admissiontimeline');
+    Route::get('/edit/admissiontimeline/{id}', 'EditAdmissiontimeline')->name('edit.admissiontimeline');
+    Route::post('/update/admissiontimeline', 'UpdateAdmissiontimeline')->name('update.admissiontimeline');
+    Route::get('/delete/admissiontimeline/{id}', 'DeleteAdmissiontimeline')->name('delete.admissiontimeline');
+   });
+
+    Route::controller(FinancialadviceController::class)->group(function() {
+    Route::get('/all/financialadvice', 'AllFinancialadvice')->name('all.financialadvice');
+    Route::get('/add/financialadvice', 'AddFinancialadvice')->name('add.financialadvice');
+    Route::post('/store/financialadvice', 'StoreFinancialadvice')->name('store.financialadvice');
+    Route::get('/edit/financialadvice/{id}', 'EditFinancialadvice')->name('edit.financialadvice');
+    Route::post('/update/financialadvice', 'UpdateFinancialadvice')->name('update.financialadvice');
+    Route::get('/delete/financialadvice/{id}', 'DeleteFinancialadvice')->name('delete.financialadvice');
+   });
+
+    Route::controller(FinancialprocessController::class)->group(function() {
+    Route::get('/all/financialprocesses', 'AllFinancialprocesses')->name('all.financialprocesses');
+    Route::get('/add/financialprocess', 'AddFinancialprocess')->name('add.financialprocess');
+    Route::post('/store/financialprocess', 'StoreFinancialprocess')->name('store.financialprocess');
+    Route::get('/edit/financialprocess/{id}', 'EditFinancialprocess')->name('edit.financialprocess');
+    Route::post('/update/financialprocess', 'UpdateFinancialprocess')->name('update.financialprocess');
+    Route::get('/delete/financialprocess/{id}', 'DeleteFinancialprocess')->name('delete.financialprocess');
+   });
+
+    Route::controller(FinancialrequirementController::class)->group(function() {
+    Route::get('/all/financialrequirements', 'AllFinancialrequirements')->name('all.financialrequirements');
+    Route::get('/add/financialrequirement', 'AddFinancialrequirement')->name('add.financialrequirement');
+    Route::post('/store/financialrequirement', 'StoreFinancialrequirement')->name('store.financialrequirement');
+    Route::get('/edit/financialrequirement/{id}', 'EditFinancialrequirement')->name('edit.financialrequirement');
+    Route::post('/update/financialrequirement', 'UpdateFinancialrequirement')->name('update.financialrequirement');
+    Route::get('/delete/financialrequirement/{id}', 'DeleteFinancialrequirement')->name('delete.financialrequirement');
+   });
+
+    Route::controller(FinancialtimelineController::class)->group(function() {
+    Route::get('/all/financialtimelines', 'AllFinancialtimelines')->name('all.financialtimelines');
+    Route::get('/add/financialtimeline', 'AddFinancialtimeline')->name('add.financialtimeline');
+    Route::post('/store/financialtimeline', 'StoreFinancialtimeline')->name('store.financialtimeline');
+    Route::get('/edit/financialtimeline/{id}', 'EditFinancialtimeline')->name('edit.financialtimeline');
+    Route::post('/update/financialtimeline', 'UpdateFinancialtimeline')->name('update.financialtimeline');
+    Route::get('/delete/financialtimeline/{id}', 'DeleteFinancialtimeline')->name('delete.financialtimeline');
+   });
+
+    Route::controller(FinancialfaqController::class)->group(function() {
+    Route::get('/all/financialfaqs', 'AllFinancialfaqs')->name('all.financialfaqs');
+    Route::get('/add/financialfaq', 'AddFinancialfaq')->name('add.financialfaq');
+    Route::post('/store/financialfaq', 'StoreFinancialfaq')->name('store.financialfaq');
+    Route::get('/edit/financialfaq/{id}', 'EditFinancialfaq')->name('edit.financialfaq');
+    Route::post('/update/financialfaq', 'UpdateFinancialfaq')->name('update.financialfaq');
+    Route::get('/delete/financialfaq/{id}', 'DeleteFinancialfaq')->name('delete.financialfaq');
+   });
+
+   Route::controller(StudentvisaController::class)->group(function() {
+    Route::get('/all/studentvisas', 'AllStudentvisas')->name('all.studentvisas');
+    Route::get('/add/studentvisa', 'AddStudentvisa')->name('add.studentvisa');
+    Route::post('/store/studentvisa', 'StoreStudentvisa')->name('store.studentvisa');
+    Route::get('/edit/studentvisa/{id}', 'EditStudentvisa')->name('edit.studentvisa');
+    Route::post('/update/studentvisa', 'UpdateStudentvisa')->name('update.studentvisa');
+    Route::get('/delete/studentvisa/{id}', 'DeleteStudentvisa')->name('delete.studentvisa');
+   });
+
+    Route::controller(StudentprocessController::class)->group(function() {
+    Route::get('/all/studentprocesses', 'AllStudentprocesses')->name('all.studentprocesses');
+    Route::get('/add/studentprocess', 'AddStudentprocess')->name('add.studentprocess');
+    Route::post('/store/studentprocess', 'StoreStudentprocess')->name('store.studentprocess');
+    Route::get('/edit/studentprocess/{id}', 'EditStudentprocess')->name('edit.studentprocess');
+    Route::post('/update/studentprocess', 'UpdateStudentprocess')->name('update.studentprocess');
+    Route::get('/delete/studentprocess/{id}', 'DeleteStudentprocess')->name('delete.studentprocess');
+   });
+
+   Route::controller(StudenttimelineController::class)->group(function() {
+    Route::get('/all/studenttimelines', 'AllStudenttimelines')->name('all.studenttimelines');
+    Route::get('/add/studenttimeline', 'AddStudenttimeline')->name('add.studenttimeline');
+    Route::post('/store/studenttimeline', 'StoreStudenttimeline')->name('store.studenttimeline');
+    Route::get('/edit/studenttimeline/{id}', 'EditStudenttimeline')->name('edit.studenttimeline');
+    Route::post('/update/studenttimeline', 'UpdateStudenttimeline')->name('update.studenttimeline');
+    Route::get('/delete/studenttimeline/{id}', 'DeleteStudenttimeline')->name('delete.studenttimeline');
+   });
+
+    Route::controller(SchoolController::class)->group(function() {
+    Route::get('/all/schools', 'AllSchools')->name('all.schools');
+    Route::get('/add/school', 'AddSchool')->name('add.school');
+    Route::post('/store/school', 'StoreSchool')->name('store.school');
+    Route::get('/edit/school/{id}', 'EditSchool')->name('edit.school');
+    Route::post('/update/school', 'UpdateSchool')->name('update.school');
+    Route::get('/delete/school/{id}', 'DeleteSchool')->name('delete.school');
+   });
+
+    Route::controller(FloatingbuttonController::class)->group(function() {
+    Route::get('/all/floatingbuttons', 'AllFloatingbuttons')->name('all.floatingbuttons');
+    Route::get('/add/floatingbutton', 'AddFloatingbutton')->name('add.floatingbutton');
+    Route::post('/store/floatingbutton', 'StoreFloatingbutton')->name('store.floatingbutton');
+    Route::get('/edit/floatingbutton/{id}', 'EditFloatingbutton')->name('edit.floatingbutton');
+    Route::post('/update/floatingbutton', 'UpdateFloatingbutton')->name('update.floatingbutton');
+    Route::get('/delete/floatingbutton/{id}', 'DeleteFloatingbutton')->name('delete.floatingbutton');
+   });
+
+   Route::controller(StudentrequirementController::class)->group(function() {
+    Route::get('/all/studentrequirements', 'AllStudentrequirements')->name('all.studentrequirements');
+    Route::get('/add/studentrequirement', 'AddStudentrequirement')->name('add.studentrequirement');
+    Route::post('/store/studentrequirement', 'StoreStudentrequirement')->name('store.studentrequirement');
+    Route::get('/edit/studentrequirement/{id}', 'EditStudentrequirement')->name('edit.studentrequirement');
+    Route::post('/update/studentrequirement', 'UpdateStudentrequirement')->name('update.studentrequirement');
+    Route::get('/delete/studentrequirement/{id}', 'DeleteStudentrequirement')->name('delete.studentrequirement');
+   });
+
+   Route::controller(StudentfaqController::class)->group(function() {
+    Route::get('/all/studentfaqs', 'AllStudentfaqs')->name('all.studentfaqs');
+    Route::get('/add/studentfaq', 'AddStudentfaq')->name('add.studentfaq');
+    Route::post('/store/studentfaq', 'StoreStudentfaq')->name('store.studentfaq');
+    Route::get('/edit/studentfaq/{id}', 'EditStudentfaq')->name('edit.studentfaq');
+    Route::post('/update/studentfaq', 'UpdateStudentfaq')->name('update.studentfaq');
+    Route::get('/delete/studentfaq/{id}', 'DeleteStudentfaq')->name('delete.studentfaq');
    });
 
     Route::controller(CargoController::class)->group(function() {
@@ -259,6 +463,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/counselor/{id}', 'EditCounselor')->name('edit.counselor');
     Route::post('/update/counselor', 'UpdateCounselor')->name('update.counselor');
     Route::get('/delete/counselor/{id}', 'DeleteCounselor')->name('delete.counselor');
+   });
+
+   Route::controller(PlatformstatController::class)->group(function() {
+    Route::get('/all/platformstats', 'AllPlatformstats')->name('all.platformstats');
+    Route::get('/add/platformstat', 'AddPlatformstat')->name('add.platformstat');
+    Route::post('/store/platformstat', 'StorePlatformstat')->name('store.platformstat');
+    Route::get('/edit/platformstat/{id}', 'EditPlatformstat')->name('edit.platformstat');
+    Route::post('/update/platformstat', 'UpdatePlatformstat')->name('update.platformstat');
+    Route::get('/delete/platformstat/{id}', 'DeletePlatformstat')->name('delete.platformstat');
    });
 
     Route::controller(BookingController::class)->group(function() {

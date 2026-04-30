@@ -119,32 +119,3 @@
     </script>
 
 @endsection
-
-                    },
-                    position: {
-                        required: 'Please Enter Team Position',
-                    },
-                    description: {
-                        required: 'Please Enter Team Description',
-                    },
-                    image: {
-                        required: 'Please Upload Team Image',
-                    },
-                },
-
-                errorElement: 'span',
-                errorPlacement: function (error, element) {
-                    error.addClass('invalid-feedback');
-                    element.closest('.form-group').append(error);
-                },
-                highlight: function(element){
-                    $(element).addClass('is-invalid');
-                },
-                unhighlight: function(element){
-                    $(element).removeClass('is-invalid');
-                },
-            });
-        });
-    </script>
-
-@endsection

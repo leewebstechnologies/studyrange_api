@@ -33,7 +33,7 @@ class JourneyController extends Controller
         return redirect()->route('all.journeys')->with($notification);
     }
 
-    public function EditJourney($id) {
+    public function EditJourney(int $id) {
         $journey = Journey::findOrFail($id);
         return view('backend.journey.edit_journey', compact('journey'));
     }
@@ -54,7 +54,7 @@ class JourneyController extends Controller
         return redirect()->route('all.journeys')->with($notification);
     }
 
-    public function DeleteJourney($id) {
+    public function DeleteJourney(int $id) {
         Journey::findOrFail($id)->delete();
 
         $notification = [
