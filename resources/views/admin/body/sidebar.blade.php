@@ -744,18 +744,54 @@
                 </li>
 
                 <li>
-                    <a href="#scholarshiptop" data-bs-toggle="collapse">
+                    <a href="#resource" data-bs-toggle="collapse">
                         <i data-feather="credit-card"></i>
-                        <span>Manage Scholarship Top</span>
+                        <span>Manage Resources</span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="scholarshiptop">
+                    <div class="collapse" id="resource">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('all.scholarshiptops') }}" class="tp-link">All Scholarship Tops</a>
+                                <a href="{{ route('all.resources') }}" class="tp-link">All Resources</a>
                             </li>
                             <li>
-                                <a href="{{ route('add.scholarshiptop') }}" class="tp-link">Add Scholarship Top</a>
+                                <a href="{{ route('add.resource') }}" class="tp-link">Add Resource</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#resourcedetail" data-bs-toggle="collapse">
+                        <i data-feather="credit-card"></i>
+                        <span>Manage Resource Detail</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="resourcedetail">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.resourcedetails') }}" class="tp-link">All Resource Details</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.resourcedetail') }}" class="tp-link">Add Resource Detail</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#videotutorial" data-bs-toggle="collapse">
+                        <i data-feather="credit-card"></i>
+                        <span>Manage Video Tutorials</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="videotutorial">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.videotutorials') }}" class="tp-link">All Video Tutorials</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.videotutorial') }}" class="tp-link">Add Video Tutorial</a>
                             </li>
                         </ul>
                     </div>

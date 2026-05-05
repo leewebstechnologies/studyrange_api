@@ -8,12 +8,12 @@
 
         <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
             <div class="flex-grow-1">
-                <h4 class="fs-18 fw-semibold m-0">All Scholarship Tops</h4>
+                <h4 class="fs-18 fw-semibold m-0">All Resources</h4>
             </div>
 
             <div class="text-end">
                 <ol class="breadcrumb m-0 py-0">
-                    <a href="{{ route('add.scholarshiptop') }}" class="btn btn-primary">Add Scholarship Top</a>
+                    <a href="{{ route('add.resource') }}" class="btn btn-primary">Add Resource</a>
                 </ol>
             </div>
         </div>
@@ -29,27 +29,33 @@
                             <tr>
                                 <th>S/N</th>
                                 <th>Title</th>
-                                <th>Description</th>
+                                <th>Tag</th>
+                                <th>Tag Color</th>
+                                <th>Read Time</th>
+                                <th>Image</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                                @foreach ($scholarshiptop as $key=> $item)
+                                @foreach ($resource as $key=> $item)
                                 <tr>
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $item->title }}</td>
-                                    <td>{{ $item->description }}</td>
+                                    <td>{{ $item->tag }}</td>
+                                    <td>{{ $item->tagColor }}</td>
+                                    <td>{{ $item->readTime }}</td>
+                                    <td><img src="{{ asset($item->image) }}" alt="resource" style="width: 70px; height: 40px;"></td>
                                     <td>
                                         <div class="d-flex gap-2">
-                                        <a href="{{ route('edit.scholarshiptop', $item->id) }}" class="btn btn-success btn-sm">
-                                            Edit
-                                        </a>
+                                            <a href="{{ route('edit.resource', $item->id) }}" class="btn btn-success btn-sm">
+                                                Edit
+                                            </a>
 
-                                        <a href="{{ route('delete.scholarshiptop', $item->id) }}"
-                                            class="btn btn-danger btn-sm"
-                                            id="delete">
-                                            Delete
-                                        </a>
+                                            <a href="{{ route('delete.resource', $item->id) }}"
+                                                class="btn btn-danger btn-sm"
+                                                id="delete">
+                                                Delete
+                                            </a>
                                         </div>
                                     </td>
                                 </tr>
