@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('counselors', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('section')->nullable();
-            $table->string('experience')->nullable();
+            $table->string('specialty')->nullable();
+            $table->string('exp')->nullable();
+            $table->string('available')->nullable();
             $table->timestamps();
         });
     }

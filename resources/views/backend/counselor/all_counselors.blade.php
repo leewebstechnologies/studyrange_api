@@ -29,8 +29,9 @@
                             <tr>
                                 <th>S/N</th>
                                 <th>Name</th>
-                                <th>Section</th>
+                                <th>Specialty</th>
                                 <th>Experience</th>
+                                <th>Availability</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -39,8 +40,9 @@
                                 <tr>
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $item->name }}</td>
-                                    <td>{{ $item->section }}</td>
-                                    <td>{{ $item->experience }}</td>
+                                    <td>{{ $item->specialty }}</td>
+                                    <td>{{ $item->exp }}</td>
+                                    <td>{{ $item->available }}</td>
                                     <td>
                                         <div class="d-flex gap-2">
                                         <a href="{{ route('edit.counselor', $item->id) }}" class="btn btn-success btn-sm">

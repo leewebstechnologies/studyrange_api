@@ -77,7 +77,7 @@ Route::get('/faq', [FaqController::class, 'ApiAllFaqs']);
 Route::get('/cargo', [CargoController::class, 'ApiAllCargoes']);
 Route::get('/cargo_faq', [Cargo_faqController::class, 'ApiAllCargoFaqs']);
 Route::get('/contactone', [ContactoneController::class, 'ApiAllContactOne']);
-Route::get('/contacttwo', [ContacttwoController::class, 'ApiAllContactTwo']);
+Route::get('/contacttwo', [ContacttwoController::class, 'ApiAllContacttwo']);
 Route::get('/counselor', [CounselorController::class, 'ApiAllCounselors']);
 Route::get('/card', [CardController::class, 'ApiAllCards']);
 Route::get('/about_rating', [About_ratingController::class, 'ApiAllAboutRatings']);

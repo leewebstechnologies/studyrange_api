@@ -21,8 +21,9 @@ class CounselorController extends Controller
 
         Counselor::create([
             'name' => $request->name,
-            'section' => $request->section,
-            'experience' => $request->experience,
+            'specialty' => $request->specialty,
+            'exp' => $request->exp,
+            'available' => $request->available,
         ]);
 
         $notification = [
@@ -42,8 +43,9 @@ class CounselorController extends Controller
         $counselor = Counselor::findOrFail($request->id);
         $counselor->update([
             'name' => $request->name,
-            'section' => $request->section,
-            'experience' => $request->experience,
+            'specialty' => $request->specialty,
+            'exp' => $request->exp,
+            'available' => $request->available,
         ]);
 
         $notification = [

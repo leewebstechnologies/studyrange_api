@@ -33,13 +33,18 @@
                             </div>
 
                             <div class="col-md-6">
-                                <label for="validationDefault01" class="form-label">Counselor Section</label>
-                                <input type="text" name="section" class="form-control" value="{{ $counselor->section }}">
+                                <label for="validationDefault01" class="form-label">Counselor Specialty</label>
+                                <input type="text" name="specialty" class="form-control" value="{{ $counselor->specialty }}">
                             </div>
 
                             <div class="col-md-6">
                                 <label for="validationDefault01" class="form-label">Counselor Experience</label>
-                                <input type="text" name="experience" class="form-control" value="{{ $counselor->experience }}">
+                                <input type="text" name="exp" class="form-control" value="{{ $counselor->exp }}">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="validationDefault01" class="form-label">Counselor Availability</label>
+                                <input type="text" name="available" class="form-control" value="{{ $counselor->available }}">
                             </div>
 
                             <div class="col-12">

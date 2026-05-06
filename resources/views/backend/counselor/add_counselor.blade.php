@@ -31,13 +31,18 @@
                             </div>
 
                             <div class="col-md-6 form-group">
-                                <label for="validationDefault01" class="form-label">Counselor Section</label>
-                                <input type="text" name="section" class="form-control">
+                                <label for="validationDefault01" class="form-label">Counselor Specialty</label>
+                                <input type="text" name="specialty" class="form-control">
                             </div>
 
                             <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Counselor Experience</label>
-                                <input type="text" name="experience" class="form-control">
+                                <input type="text" name="exp" class="form-control">
+                            </div>
+
+                            <div class="col-md-6 form-group">
+                                <label for="validationDefault01" class="form-label">Counselor Availability</label>
+                                <input type="text" name="available" class="form-control">
                             </div>
 
                             <div class="col-12">
@@ -70,10 +75,13 @@
                     name: {
                         required: true,
                     },
-                    section: {
+                    specialty: {
                         required: true,
                     },
-                    experience: {
+                    exp: {
+                        required: true,
+                    },
+                    available: {
                         required: true,
                     },
                 },
@@ -82,11 +90,14 @@
                     name: {
                         required: 'Please Enter Team Name',
                     },
-                    section: {
-                        required: 'Please Enter Team Section',
+                    specialty: {
+                        required: 'Please Enter Team Specialty',
                     },
-                    experience: {
+                    exp: {
                         required: 'Please Enter Team Experience',
+                    },
+                    available: {
+                        required: 'Please Enter Team Available',
                     },
                 },
 
