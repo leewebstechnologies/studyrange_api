@@ -47,7 +47,7 @@ class ServiceController extends Controller
     }
     // End Method
 
-    public function EditService($id) {
+    public function EditService(int $id) {
         $service = Service::find($id);
         return view('backend.service.edit_service', compact('service'));
     }
@@ -99,7 +99,7 @@ class ServiceController extends Controller
     }
     // End Method
 
-    public function DeleteService($id) {
+    public function DeleteService(int $id) {
         $item = Service::find($id);
         $img = $item->image;
         unlink($img);

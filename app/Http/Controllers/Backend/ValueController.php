@@ -32,7 +32,7 @@ class ValueController extends Controller
         return redirect()->route('all.values')->with($notification);
     }
 
-    public function EditValue($id) {
+    public function EditValue(int $id) {
         $value = Value::findOrFail($id);
         return view('backend.value.edit_value', compact('value'));
     }
@@ -52,7 +52,7 @@ class ValueController extends Controller
         return redirect()->route('all.values')->with($notification);
     }
 
-    public function DeleteValue($id) {
+    public function DeleteValue(int $id) {
         Value::findOrFail($id)->delete();
 
         $notification = [

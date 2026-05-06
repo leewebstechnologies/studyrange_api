@@ -32,7 +32,7 @@ class StudentprocessController extends Controller
         return redirect()->route('all.studentprocesses')->with($notification);
     }
 
-    public function EditStudentprocess($id) {
+    public function EditStudentprocess(int $id) {
         $studentprocess = Studentprocess::findOrFail($id);
         return view('backend.studentprocess.edit_studentprocess', compact('studentprocess'));
     }
@@ -52,7 +52,7 @@ class StudentprocessController extends Controller
         return redirect()->route('all.studentprocesses')->with($notification);
     }
 
-    public function DeleteStudentprocess($id) {
+    public function DeleteStudentprocess(int $id) {
         Studentprocess::findOrFail($id)->delete();
 
         $notification = [

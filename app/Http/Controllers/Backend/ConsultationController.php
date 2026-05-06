@@ -33,7 +33,7 @@ class ConsultationController extends Controller
         return redirect()->route('all.consultations')->with($notification);
     }
 
-    public function EditConsultation($id) {
+    public function EditConsultation(int $id) {
         $consultation = Consultation::findOrFail($id);
         return view('backend.consultation.edit_consultation', compact('consultation'));
     }
@@ -54,7 +54,7 @@ class ConsultationController extends Controller
         return redirect()->route('all.consultations')->with($notification);
     }
 
-    public function DeleteConsultation($id) {
+    public function DeleteConsultation(int $id) {
         Consultation::findOrFail($id)->delete();
 
         $notification = [

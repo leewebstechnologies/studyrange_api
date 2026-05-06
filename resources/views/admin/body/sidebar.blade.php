@@ -780,18 +780,18 @@
                 </li>
 
                 <li>
-                    <a href="#videotutorial" data-bs-toggle="collapse">
+                    <a href="#resourcetutorial" data-bs-toggle="collapse">
                         <i data-feather="credit-card"></i>
-                        <span>Manage Video Tutorials</span>
+                        <span>Manage Resource Tutorials</span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="videotutorial">
+                    <div class="collapse" id="resourcetutorial">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('all.videotutorials') }}" class="tp-link">All Video Tutorials</a>
+                                <a href="{{ route('all.resourcetutorials') }}" class="tp-link">All Resource Tutorials</a>
                             </li>
                             <li>
-                                <a href="{{ route('add.videotutorial') }}" class="tp-link">Add Video Tutorial</a>
+                                <a href="{{ route('add.resourcetutorial') }}" class="tp-link">Add Resource Tutorial</a>
                             </li>
                         </ul>
                     </div>

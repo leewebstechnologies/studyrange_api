@@ -32,7 +32,7 @@ class FinancialfaqController extends Controller
         return redirect()->route('all.financialfaqs')->with($notification);
     }
 
-    public function EditFinancialfaq($id) {
+    public function EditFinancialfaq(int $id) {
         $financialfaq = Financialfaq::findOrFail($id);
         return view('backend.financialfaq.edit_financialfaq', compact('financialfaq'));
     }
@@ -52,7 +52,7 @@ class FinancialfaqController extends Controller
         return redirect()->route('all.financialfaqs')->with($notification);
     }
 
-    public function DeleteFinancialfaq($id) {
+    public function DeleteFinancialfaq(int $id) {
         Financialfaq::findOrFail($id)->delete();
 
         $notification = [

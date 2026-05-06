@@ -46,7 +46,7 @@ class OurpartnerController extends Controller
     }
     // End Method
 
-    public function EditOurpartner($id) {
+    public function EditOurpartner(int $id) {
         $ourpartner = Ourpartner::find($id);
         return view('backend.ourpartner.edit_ourpartner', compact('ourpartner'));
     }
@@ -96,7 +96,7 @@ class OurpartnerController extends Controller
     }
     // End Method
 
-    public function DeleteOurpartner($id) {
+    public function DeleteOurpartner(int $id) {
         $item = Ourpartner::find($id);
         $img = $item->image;
         unlink($img);

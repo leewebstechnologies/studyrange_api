@@ -10,7 +10,7 @@
 
         <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
             <div class="flex-grow-1">
-                <h4 class="fs-18 fw-semibold m-0">Add Video Tutorial</h4>
+                <h4 class="fs-18 fw-semibold m-0">Add Resource Tutorial</h4>
             </div>
         </div>
 
@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form id="myForm" action="{{ route('store.videotutorial') }}"
+                        <form id="myForm" action="{{ route('store.resourcetutorial') }}"
                               method="post"
                               class="row g-3"
                               enctype="multipart/form-data">
@@ -48,7 +48,7 @@
                             <div class="col-md-6 form-group">
                                 <label class="form-label">Select Video</label>
                                 <input type="file"
-                                name="video"
+                                name="videoUrl"
                                 class="form-control"
                                 id="video"
                                 accept="video/*"
@@ -104,7 +104,7 @@
                     views: {
                         required : true,
                     },
-                     video: {
+                     videoUrl: {
                         required : true,
                     },
 
@@ -119,7 +119,7 @@
                     views: {
                         required : 'Please Enter Views',
                     },
-                    video: {
+                    videoUrl: {
                         required : 'Please Select Video',
                     },
 

@@ -32,7 +32,7 @@ class WeekController extends Controller
         return redirect()->route('all.weeks')->with($notification);
     }
 
-    public function EditWeek($id) {
+    public function EditWeek(int $id) {
         $week = Week::findOrFail($id);
         return view('backend.week.edit_week', compact('week'));
     }
@@ -52,7 +52,7 @@ class WeekController extends Controller
         return redirect()->route('all.weeks')->with($notification);
     }
 
-    public function DeleteWeek($id) {
+    public function DeleteWeek(int $id) {
         Week::findOrFail($id)->delete();
 
         $notification = [

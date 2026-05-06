@@ -32,7 +32,7 @@ class Cargo_faqController extends Controller
         return redirect()->route('all.cargo_faqs')->with($notification);
     }
 
-    public function EditCargoFaq($id) {
+    public function EditCargoFaq(int $id) {
         $cargo_faq = Cargo_faq::findOrFail($id);
         return view('backend.cargo-faq.edit_cargo_faq', compact('cargo_faq'));
     }
@@ -52,7 +52,7 @@ class Cargo_faqController extends Controller
         return redirect()->route('all.cargo_faqs')->with($notification);
     }
 
-    public function DeleteCargoFaq($id) {
+    public function DeleteCargoFaq(int $id) {
         Cargo_faq::findOrFail($id)->delete();
 
         $notification = [

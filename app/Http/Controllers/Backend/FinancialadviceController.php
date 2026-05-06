@@ -32,7 +32,7 @@ class FinancialadviceController extends Controller
         return redirect()->route('all.financialadvice')->with($notification);
     }
 
-    public function EditFinancialadvice($id) {
+    public function EditFinancialadvice(int $id) {
         $financialadvice = Financialadvice::findOrFail($id);
         return view('backend.financialadvice.edit_financialadvice', compact('financialadvice'));
     }
@@ -52,7 +52,7 @@ class FinancialadviceController extends Controller
         return redirect()->route('all.financialadvice')->with($notification);
     }
 
-    public function DeleteFinancialadvice($id) {
+    public function DeleteFinancialadvice(int $id) {
         Financialadvice::findOrFail($id)->delete();
 
         $notification = [

@@ -32,7 +32,7 @@ class FinancialprocessController extends Controller
         return redirect()->route('all.financialprocesses')->with($notification);
     }
 
-    public function EditFinancialprocess($id) {
+    public function EditFinancialprocess(int $id) {
         $financialprocess = Financialprocess::findOrFail($id);
         return view('backend.financialprocess.edit_financialprocess', compact('financialprocess'));
     }
@@ -52,7 +52,7 @@ class FinancialprocessController extends Controller
         return redirect()->route('all.financialprocesses')->with($notification);
     }
 
-    public function DeleteFinancialprocess($id) {
+    public function DeleteFinancialprocess(int $id) {
         Financialprocess::findOrFail($id)->delete();
 
         $notification = [

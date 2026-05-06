@@ -32,7 +32,7 @@ class StudentfaqController extends Controller
         return redirect()->route('all.studentfaqs')->with($notification);
     }
 
-    public function EditStudentfaq($id) {
+    public function EditStudentfaq(int $id) {
         $studentfaq = Studentfaq::findOrFail($id);
         return view('backend.studentfaq.edit_studentfaq', compact('studentfaq'));
     }
@@ -52,7 +52,7 @@ class StudentfaqController extends Controller
         return redirect()->route('all.studentfaqs')->with($notification);
     }
 
-    public function DeleteStudentfaq($id) {
+    public function DeleteStudentfaq(int $id) {
         Studentfaq::findOrFail($id)->delete();
 
         $notification = [

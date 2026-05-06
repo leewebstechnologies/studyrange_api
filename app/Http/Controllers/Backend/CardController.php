@@ -33,7 +33,7 @@ class CardController extends Controller
         return redirect()->route('all.cards')->with($notification);
     }
 
-    public function EditCard($id) {
+    public function EditCard(int $id) {
         $card = Card::findOrFail($id);
         return view('backend.card.edit_card', compact('card'));
     }
@@ -54,7 +54,7 @@ class CardController extends Controller
         return redirect()->route('all.cards')->with($notification);
     }
 
-    public function DeleteCard($id) {
+    public function DeleteCard(int $id) {
         Card::findOrFail($id)->delete();
 
         $notification = [

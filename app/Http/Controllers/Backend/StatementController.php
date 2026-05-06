@@ -32,7 +32,7 @@ class StatementController extends Controller
         return redirect()->route('all.statements')->with($notification);
     }
 
-    public function EditStatement($id) {
+    public function EditStatement(int $id) {
         $statement = Statement::findOrFail($id);
         return view('backend.statement.edit_statement', compact('statement'));
     }
@@ -52,7 +52,7 @@ class StatementController extends Controller
         return redirect()->route('all.statements')->with($notification);
     }
 
-    public function DeleteStatement($id) {
+    public function DeleteStatement(int $id) {
         Statement::findOrFail($id)->delete();
 
         $notification = [

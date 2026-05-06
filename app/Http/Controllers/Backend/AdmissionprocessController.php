@@ -31,7 +31,7 @@ class AdmissionprocessController extends Controller
         return redirect()->route('all.admissionprocesses')->with($notification);
     }
 
-    public function EditAdmissionprocess($id) {
+    public function EditAdmissionprocess(int $id) {
         $admissionprocess = Admissionprocess::findOrFail($id);
         return view('backend.admissionprocess.edit_admissionprocess', compact('admissionprocess'));
     }
@@ -50,7 +50,7 @@ class AdmissionprocessController extends Controller
         return redirect()->route('all.admissionprocesses')->with($notification);
     }
 
-    public function DeleteAdmissionprocess($id) {
+    public function DeleteAdmissionprocess(int $id) {
         Admissionprocess::findOrFail($id)->delete();
 
         $notification = [

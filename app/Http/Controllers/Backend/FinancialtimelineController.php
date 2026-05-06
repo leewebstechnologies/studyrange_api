@@ -31,7 +31,7 @@ class FinancialtimelineController extends Controller
         return redirect()->route('all.financialtimelines')->with($notification);
     }
 
-    public function EditFinancialtimeline($id) {
+    public function EditFinancialtimeline(int $id) {
         $financialtimeline = Financialtimeline::findOrFail($id);
         return view('backend.financialtimeline.edit_financialtimeline', compact('financialtimeline'));
     }
@@ -50,7 +50,7 @@ class FinancialtimelineController extends Controller
         return redirect()->route('all.financialtimelines')->with($notification);
     }
 
-    public function DeleteFinancialtimeline($id) {
+    public function DeleteFinancialtimeline(int $id) {
         Financialtimeline::findOrFail($id)->delete();
 
         $notification = [

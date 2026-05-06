@@ -31,7 +31,7 @@ class AdmissionrequirementController extends Controller
         return redirect()->route('all.admissionrequirements')->with($notification);
     }
 
-    public function EditAdmissionrequirement($id) {
+    public function EditAdmissionrequirement(int $id) {
         $admissionrequirement = Admissionrequirement::findOrFail($id);
         return view('backend.admissionrequirement.edit_admissionrequirement', compact('admissionrequirement'));
     }
@@ -50,7 +50,7 @@ class AdmissionrequirementController extends Controller
         return redirect()->route('all.admissionrequirements')->with($notification);
     }
 
-    public function DeleteAdmissionrequirement($id) {
+    public function DeleteAdmissionrequirement(int $id) {
         Admissionrequirement::findOrFail($id)->delete();
 
         $notification = [

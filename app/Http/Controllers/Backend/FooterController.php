@@ -34,7 +34,7 @@ class FooterController extends Controller
         return redirect()->route('all.footers')->with($notification);
     }
 
-    public function EditFooter($id) {
+    public function EditFooter(int $id) {
         $footer = Footer::findOrFail($id);
         return view('backend.footer.edit_footer', compact('footer'));
     }
@@ -56,7 +56,7 @@ class FooterController extends Controller
         return redirect()->route('all.footers')->with($notification);
     }
 
-    public function DeleteFooter($id) {
+    public function DeleteFooter(int $id) {
         Footer::findOrFail($id)->delete();
 
         $notification = [

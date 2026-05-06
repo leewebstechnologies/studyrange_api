@@ -32,7 +32,7 @@ class FaqController extends Controller
         return redirect()->route('all.faqs')->with($notification);
     }
 
-    public function EditFaq($id) {
+    public function EditFaq(int $id) {
         $faq = Faq::findOrFail($id);
         return view('backend.faq.edit_faq', compact('faq'));
     }
@@ -52,7 +52,7 @@ class FaqController extends Controller
         return redirect()->route('all.faqs')->with($notification);
     }
 
-    public function DeleteFaq($id) {
+    public function DeleteFaq(int $id) {
         Faq::findOrFail($id)->delete();
 
         $notification = [

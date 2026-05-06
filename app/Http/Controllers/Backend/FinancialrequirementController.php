@@ -31,7 +31,7 @@ class FinancialrequirementController extends Controller
         return redirect()->route('all.financialrequirements')->with($notification);
     }
 
-    public function EditFinancialrequirement($id) {
+    public function EditFinancialrequirement(int $id) {
         $financialrequirement = Financialrequirement::findOrFail($id);
         return view('backend.financialrequirement.edit_financialrequirement', compact('financialrequirement'));
     }
@@ -50,7 +50,7 @@ class FinancialrequirementController extends Controller
         return redirect()->route('all.financialrequirements')->with($notification);
     }
 
-    public function DeleteFinancialrequirement($id) {
+    public function DeleteFinancialrequirement(int $id) {
         Financialrequirement::findOrFail($id)->delete();
 
         $notification = [

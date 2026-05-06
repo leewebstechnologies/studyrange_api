@@ -35,6 +35,7 @@ use App\Http\Controllers\Backend\PartnerController;
 use App\Http\Controllers\Backend\PlatformstatController;
 use App\Http\Controllers\Backend\ResourceController;
 use App\Http\Controllers\Backend\ResourcedetailController;
+use App\Http\Controllers\Backend\ResourcetutorialController;
 use App\Http\Controllers\Backend\SchoolController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\SocialController;
@@ -48,7 +49,6 @@ use App\Http\Controllers\Backend\StudentvisaController;
 use App\Http\Controllers\Backend\SuccessController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\ValueController;
-use App\Http\Controllers\Backend\VideotutorialController;
 use App\Http\Controllers\Backend\WeekController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -438,15 +438,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/resourcedetails/{id}', 'show')->name('resourcedetail.show');
    });
 
-   Route::controller(VideotutorialController::class)->group(function() {
-    Route::get('/all/videotutorials', 'AllVideotutorials')->name('all.videotutorials');
-    Route::get('/add/videotutorial', 'AddVideotutorial')->name('add.videotutorial');
-    Route::post('/store/videotutorial', 'StoreVideotutorial')->name('store.videotutorial');
-    Route::get('/edit/videotutorial/{id}', 'EditVideotutorial')->name('edit.videotutorial');
-    Route::post('/update/videotutorial', 'UpdateVideotutorial')->name('update.videotutorial');
-    Route::get('/delete/videotutorial/{id}', 'DeleteVideotutorial')->name('delete.videotutorial');
+    Route::controller(ResourcetutorialController::class)->group(function() {
+    Route::get('/all/resourcetutorials', 'AllResourcetutorials')->name('all.resourcetutorials');
+    Route::get('/add/resourcetutorial', 'AddResourcetutorial')->name('add.resourcetutorial');
+    Route::post('/store/resourcetutorial', 'StoreResourcetutorial')->name('store.resourcetutorial');
+    Route::get('/edit/resourcetutorial/{id}', 'EditResourcetutorial')->name('edit.resourcetutorial');
+    Route::post('/update/resourcetutorial', 'UpdateResourcetutorial')->name('update.resourcetutorial');
+    Route::get('/delete/resourcetutorial/{id}', 'DeleteResourcetutorial')->name('delete.resourcetutorial');
    });
-
 
 
     Route::controller(CargoController::class)->group(function() {
@@ -487,6 +486,7 @@ Route::middleware('auth')->group(function () {
 
     Route::controller(MessageController::class)->group(function() {
         Route::get('/message', 'Message')->name('message');
+        Route::get('/delete/message/{id}', 'DeleteMessage')->name('delete.message');
    });
 
    Route::controller(CounselorController::class)->group(function() {

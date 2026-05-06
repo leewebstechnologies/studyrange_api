@@ -44,8 +44,7 @@
                                     <td>{{ $item->subject }}</td>
                                     <td>{{ Str::limit($item->message, 1000); }}</td>
                                     <td>
-                                        <a href=""class="btn btn-success btn-sm">View</a>
-                                        <a href="" class="btn btn-danger btn-sm" id="delete">Delete</a>
+                                        <a href="{{ route('delete.message', $item->id) }}" class="btn btn-danger btn-sm" id="delete">Delete</a>
                                     </td>
                                 </tr>
 

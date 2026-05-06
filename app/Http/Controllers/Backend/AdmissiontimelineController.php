@@ -31,7 +31,7 @@ class AdmissiontimelineController extends Controller
         return redirect()->route('all.admissiontimelines')->with($notification);
     }
 
-    public function EditAdmissiontimeline($id) {
+    public function EditAdmissiontimeline(int $id) {
         $admissiontimeline = Admissiontimeline::findOrFail($id);
         return view('backend.admissiontimeline.edit_admissiontimeline', compact('admissiontimeline'));
     }
@@ -50,7 +50,7 @@ class AdmissiontimelineController extends Controller
         return redirect()->route('all.admissiontimelines')->with($notification);
     }
 
-    public function DeleteAdmissiontimeline($id) {
+    public function DeleteAdmissiontimeline(int $id) {
         Admissiontimeline::findOrFail($id)->delete();
 
         $notification = [

@@ -10,7 +10,7 @@
 
         <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
             <div class="flex-grow-1">
-                <h4 class="fs-18 fw-semibold m-0">Edit Video Tutorial</h4>
+                <h4 class="fs-18 fw-semibold m-0">Edit Resource Tutorial</h4>
             </div>
         </div>
 
@@ -20,24 +20,24 @@
                 <div class="card">
 
                     <div class="card-header">
-                        <h5 class="card-title mb-0">Update Video Tutorial</h5>
+                        <h5 class="card-title mb-0">Update Resource Tutorial</h5>
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('update.videotutorial') }}"
+                        <form action="{{ route('update.resourcetutorial') }}"
                               method="post"
                               class="row g-3"
                               enctype="multipart/form-data">
                             @csrf
 
-                            <input type="hidden" name="id" value="{{ $videotutorial->id }}">
+                            <input type="hidden" name="id" value="{{ $resourcetutorial->id }}">
 
                             <div class="col-md-3">
                                 <label class="form-label">Duration</label>
                                 <input type="text"
                                     name="duration"
                                     class="form-control"
-                                    value="{{ $videotutorial->duration }}"
+                                    value="{{ $resourcetutorial->duration }}"
                                     placeholder="e.g. 10:45">
                             </div>
 
@@ -46,7 +46,7 @@
                                 <input type="text"
                                     name="title"
                                     class="form-control"
-                                    value="{{ $videotutorial->title }}" />
+                                    value="{{ $resourcetutorial->title }}" />
                             </div>
 
                             <div class="col-md-3">
@@ -54,14 +54,14 @@
                                 <input type="text"
                                     name="views"
                                     class="form-control"
-                                    value="{{ $videotutorial->views }}"
+                                    value="{{ $resourcetutorial->views }}"
                                     placeholder="e.g. 15k Views">
                             </div>
 
                             <div class="col-md-6">
                                 <label class="form-label">Change Video (Optional)</label>
                                 <input type="file"
-                                       name="video"
+                                       name="videoUrl"
                                        class="form-control"
                                        id="video"
                                        accept="video/*">
@@ -71,14 +71,14 @@
                                 <video id="showVideo"
                                        controls
                                        style="width: 100%; max-height: 250px;">
-                                    <source src="{{ asset('storage/' . $videotutorial->video) }}" type="video/mp4">
+                                    <source src="{{ asset('storage/' . $resourcetutorial->videoUrl) }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
 
                             <div class="col-12">
                                 <button class="btn btn-primary" type="submit">
-                                    Update Video Tutorial
+                                    Update Resource Tutorial
                                 </button>
                             </div>
 

@@ -32,7 +32,7 @@ class StudentvisaController extends Controller
         return redirect()->route('all.studentvisas')->with($notification);
     }
 
-    public function EditStudentvisa($id) {
+    public function EditStudentvisa(int $id) {
         $studentvisa = Studentvisa::findOrFail($id);
         return view('backend.studentvisa.edit_studentvisa', compact('studentvisa'));
     }
@@ -52,7 +52,7 @@ class StudentvisaController extends Controller
         return redirect()->route('all.studentvisas')->with($notification);
     }
 
-    public function DeleteStudentvisa($id) {
+    public function DeleteStudentvisa(int $id) {
         Studentvisa::findOrFail($id)->delete();
 
         $notification = [

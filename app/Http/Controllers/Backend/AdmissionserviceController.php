@@ -32,7 +32,7 @@ class AdmissionserviceController extends Controller
         return redirect()->route('all.admissionservices')->with($notification);
     }
 
-    public function EditAdmissionservice($id) {
+    public function EditAdmissionservice(int $id) {
         $admissionservice = Admissionservice::findOrFail($id);
         return view('backend.admissionservice.edit_admissionservice', compact('admissionservice'));
     }
@@ -52,7 +52,7 @@ class AdmissionserviceController extends Controller
         return redirect()->route('all.admissionservices')->with($notification);
     }
 
-    public function DeleteAdmissionservice($id) {
+    public function DeleteAdmissionservice(int $id) {
         Admissionservice::findOrFail($id)->delete();
 
         $notification = [

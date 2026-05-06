@@ -32,7 +32,7 @@ class CargoController extends Controller
         return redirect()->route('all.cargoes')->with($notification);
     }
 
-    public function EditCargo($id) {
+    public function EditCargo(int $id) {
         $cargo = Cargo::findOrFail($id);
         return view('backend.cargo.edit_cargo', compact('cargo'));
     }
@@ -52,7 +52,7 @@ class CargoController extends Controller
         return redirect()->route('all.cargoes')->with($notification);
     }
 
-    public function DeleteCargo($id) {
+    public function DeleteCargo(int $id) {
         Cargo::findOrFail($id)->delete();
 
         $notification = [

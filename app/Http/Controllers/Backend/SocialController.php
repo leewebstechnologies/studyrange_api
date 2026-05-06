@@ -34,7 +34,7 @@ class SocialController extends Controller
         return redirect()->route('all.socials')->with($notification);
     }
 
-    public function EditSocial($id) {
+    public function EditSocial(int $id) {
         $social = Social::findOrFail($id);
         return view('backend.social.edit_social', compact('social'));
     }
@@ -56,7 +56,7 @@ class SocialController extends Controller
         return redirect()->route('all.socials')->with($notification);
     }
 
-    public function DeleteSocial($id) {
+    public function DeleteSocial(int $id) {
         Social::findOrFail($id)->delete();
 
         $notification = [

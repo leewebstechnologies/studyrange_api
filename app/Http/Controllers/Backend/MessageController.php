@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Message;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
 // use Illuminate\Http\Request;
 
 class MessageController extends Controller
@@ -14,20 +17,32 @@ class MessageController extends Controller
     }
 
     // Message API
-    // public function ApiMessage(Request $request) {
-    //     $validator = Validator::make($request->all(), [
-    //         'name' => 'required|string|max:255',
-    //         'subject' => 'required|string|max:255',
-    //         'email' => 'required|email|max:255',
-    //         'message' => 'required|string',
-    //     ]);
+    public function ApiMessage(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'phone' => 'required|string',
+            'subject' => 'required|string',
+            'message' => 'required|string',
+        ]);
 
-    //     if ($validator->fails()) {
-    //         return response()->json(['errors' => $validator->errors()], 422);
-    //     }
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
 
-    //     Contact::create($request->all());
-    //     return response()->json(['message' => 'Contact sent successfully'], 201);
-    // }
+        Message::create($request->all());
+        return response()->json(['message' => 'Message sent successfully'], 201);
+    }
+
+    public function DeleteMessage(int $id) {
+        Message::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Message Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
 
 }

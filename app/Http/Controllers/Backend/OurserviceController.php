@@ -31,7 +31,7 @@ class OurserviceController extends Controller
         return redirect()->route('all.ourservices')->with($notification);
     }
 
-    public function EditOurservice($id) {
+    public function EditOurservice(int $id) {
         $ourservice = Ourservice::findOrFail($id);
         return view('backend.ourservice.edit_ourservice', compact('ourservice'));
     }
@@ -50,7 +50,7 @@ class OurserviceController extends Controller
         return redirect()->route('all.ourservices')->with($notification);
     }
 
-    public function DeleteOurservice($id) {
+    public function DeleteOurservice(int $id) {
         Ourservice::findOrFail($id)->delete();
 
         $notification = [

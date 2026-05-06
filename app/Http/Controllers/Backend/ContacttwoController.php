@@ -35,7 +35,7 @@ class ContacttwoController extends Controller
         return redirect()->route('all.contacttwo')->with($notification);
     }
 
-    public function EditContacttwo($id) {
+    public function EditContacttwo(int $id) {
         $contacttwo = Contacttwo::findOrFail($id);
         return view('backend.contacttwo.edit_contacttwo', compact('contacttwo'));
     }
@@ -58,7 +58,7 @@ class ContacttwoController extends Controller
         return redirect()->route('all.contacttwo')->with($notification);
     }
 
-    public function DeleteLive($id) {
+    public function DeleteLive(int $id) {
         Contacttwo::findOrFail($id)->delete();
 
         $notification = [

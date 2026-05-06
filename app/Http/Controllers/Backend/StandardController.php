@@ -46,7 +46,7 @@ class StandardController extends Controller
     }
     // End Method
 
-    public function EditStandard($id) {
+    public function EditStandard(int $id) {
         $standard = Standard::find($id);
         return view('backend.standard.edit_standard', compact('standard'));
     }
@@ -96,7 +96,7 @@ class StandardController extends Controller
     }
     // End Method
 
-    public function DeleteStandard($id) {
+    public function DeleteStandard(int $id) {
         $item = Standard::find($id);
         $img = $item->image;
         unlink($img);

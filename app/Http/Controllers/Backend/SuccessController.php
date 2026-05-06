@@ -47,7 +47,7 @@ class SuccessController extends Controller
     }
     // End Method
 
-    public function EditSuccess($id) {
+    public function EditSuccess(int $id) {
         $success = Success::find($id);
         return view('backend.success.edit_success', compact('success'));
     }
@@ -99,7 +99,7 @@ class SuccessController extends Controller
     }
     // End Method
 
-    public function DeleteSuccess($id) {
+    public function DeleteSuccess(int $id) {
         $item = Success::find($id);
         $img = $item->image;
         unlink($img);

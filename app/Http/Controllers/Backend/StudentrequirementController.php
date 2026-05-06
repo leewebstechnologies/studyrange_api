@@ -31,7 +31,7 @@ class StudentrequirementController extends Controller
         return redirect()->route('all.studentrequirements')->with($notification);
     }
 
-    public function EditStudentrequirement($id) {
+    public function EditStudentrequirement(int $id) {
         $studentrequirement = Studentrequirement::findOrFail($id);
         return view('backend.studentrequirement.edit_studentrequirement', compact('studentrequirement'));
     }
@@ -50,7 +50,7 @@ class StudentrequirementController extends Controller
         return redirect()->route('all.studentrequirements')->with($notification);
     }
 
-    public function DeleteStudentrequirement($id) {
+    public function DeleteStudentrequirement(int $id) {
         Studentrequirement::findOrFail($id)->delete();
 
         $notification = [

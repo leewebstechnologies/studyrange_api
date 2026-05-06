@@ -8,12 +8,12 @@
 
         <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
             <div class="flex-grow-1">
-                <h4 class="fs-18 fw-semibold m-0">All Video Tutorials</h4>
+                <h4 class="fs-18 fw-semibold m-0">All Resource Tutorials</h4>
             </div>
 
             <div class="text-end">
                 <ol class="breadcrumb m-0 py-0">
-                    <a href="{{ route('add.videotutorial') }}" class="btn btn-primary">Add Video Tutorial</a>
+                    <a href="{{ route('add.resourcetutorial') }}" class="btn btn-primary">Add Resource Tutorial</a>
                 </ol>
             </div>
         </div>
@@ -37,25 +37,25 @@
                             </thead>
 
                             <tbody>
-                                @foreach ($videotutorial as $key => $item)
+                                @foreach ($resourcetutorial as $key => $item)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
                                         <td>{{ $item->duration }}</td>
                                         <td>{{ $item->title }}</td>
                                         <td>{{ $item->views }}</td>
-                                        <td>
+                                       <td>
                                             <video width="200" height="120" controls>
-                                                <source src="{{ asset('storage/' . $item->videotutorial) }}" type="video/mp4">
+                                                <source src="{{ asset('storage/' . $item->videoUrl) }}" type="video/mp4">
                                                 Your browser does not support the video tag.
                                             </video>
                                         </td>
 
                                         <td>
-                                            <a href="{{ route('edit.videotutorial', $item->id) }}" class="btn btn-success btn-sm">
+                                            <a href="{{ route('edit.resourcetutorial', $item->id) }}" class="btn btn-success btn-sm">
                                                 Edit
                                             </a>
 
-                                            <a href="{{ route('delete.videotutorial', $item->id) }}"
+                                            <a href="{{ route('delete.resourcetutorial', $item->id) }}"
                                                class="btn btn-danger btn-sm"
                                                id="delete">
                                                 Delete

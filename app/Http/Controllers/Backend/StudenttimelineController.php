@@ -31,7 +31,7 @@ class StudenttimelineController extends Controller
         return redirect()->route('all.studenttimelines')->with($notification);
     }
 
-    public function EditStudenttimeline($id) {
+    public function EditStudenttimeline(int $id) {
         $studenttimeline = Studenttimeline::findOrFail($id);
         return view('backend.studenttimeline.edit_studenttimeline', compact('studenttimeline'));
     }
@@ -50,7 +50,7 @@ class StudenttimelineController extends Controller
         return redirect()->route('all.studenttimelines')->with($notification);
     }
 
-    public function DeleteStudenttimeline($id) {
+    public function DeleteStudenttimeline(int $id) {
         Studenttimeline::findOrFail($id)->delete();
 
         $notification = [

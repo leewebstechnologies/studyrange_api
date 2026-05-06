@@ -48,7 +48,7 @@ class TeamController extends Controller
     }
     // End Method
 
-    public function EditTeam($id) {
+    public function EditTeam(int $id) {
         $team = Team::find($id);
         return view('backend.team.edit_team', compact('team'));
     }
@@ -102,7 +102,7 @@ class TeamController extends Controller
     }
     // End Method
 
-    public function DeleteTeam($id) {
+    public function DeleteTeam(int $id) {
         $item = Team::find($id);
         $img = $item->image;
         unlink($img);

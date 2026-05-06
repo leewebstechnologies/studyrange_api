@@ -33,7 +33,7 @@ class CounselorController extends Controller
         return redirect()->route('all.counselors')->with($notification);
     }
 
-    public function EditCounselor($id) {
+    public function EditCounselor(int $id) {
         $counselor = Counselor::findOrFail($id);
         return view('backend.counselor.edit_counselor', compact('counselor'));
     }
@@ -54,7 +54,7 @@ class CounselorController extends Controller
         return redirect()->route('all.counselors')->with($notification);
     }
 
-    public function DeleteCounselor($id) {
+    public function DeleteCounselor(int $id) {
         Counselor::findOrFail($id)->delete();
 
         $notification = [

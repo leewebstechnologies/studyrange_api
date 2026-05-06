@@ -47,7 +47,7 @@ class ChoiceController extends Controller
     }
     // End Method
 
-    public function EditChoice($id) {
+    public function EditChoice(int $id) {
         $choice = Choice::find($id);
         return view('backend.choice.edit_choice', compact('choice'));
     }
@@ -99,7 +99,7 @@ class ChoiceController extends Controller
     }
     // End Method
 
-    public function DeleteChoice($id) {
+    public function DeleteChoice(int $id) {
         $item = Choice::find($id);
         $img = $item->image;
         unlink($img);
