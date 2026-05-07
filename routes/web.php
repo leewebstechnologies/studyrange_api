@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\AdmissionserviceController;
 use App\Http\Controllers\Backend\AdmissionprocessController;
 use App\Http\Controllers\Backend\AdmissionrequirementController;
 use App\Http\Controllers\Backend\AdmissiontimelineController;
+use App\Http\Controllers\Backend\AppointmentController;
 use App\Http\Controllers\Backend\BookingController;
 use App\Http\Controllers\Backend\CardController;
 use App\Http\Controllers\Backend\Cargo_faqController;
@@ -48,6 +49,7 @@ use App\Http\Controllers\Backend\StudenttimelineController;
 use App\Http\Controllers\Backend\StudentvisaController;
 use App\Http\Controllers\Backend\SuccessController;
 use App\Http\Controllers\Backend\TeamController;
+use App\Http\Controllers\Backend\TimeslotController;
 use App\Http\Controllers\Backend\ValueController;
 use App\Http\Controllers\Backend\WeekController;
 use App\Http\Controllers\ProfileController;
@@ -497,6 +499,21 @@ Route::middleware('auth')->group(function () {
     Route::post('/update/counselor', 'UpdateCounselor')->name('update.counselor');
     Route::get('/delete/counselor/{id}', 'DeleteCounselor')->name('delete.counselor');
    });
+
+    Route::controller(TimeslotController::class)->group(function() {
+    Route::get('/all/timeslots', 'AllTimeslots')->name('all.timeslots');
+    Route::get('/add/timeslot', 'AddTimeslot')->name('add.timeslot');
+    Route::post('/store/timeslot', 'StoreTimeslot')->name('store.timeslot');
+    Route::get('/edit/timeslot/{id}', 'EditTimeslot')->name('edit.timeslot');
+    Route::post('/update/timeslot', 'UpdateTimeslot')->name('update.timeslot');
+    Route::get('/delete/timeslot/{id}', 'DeleteTimeslot')->name('delete.timeslot');
+   });
+
+    Route::controller(AppointmentController::class)->group(function() {
+        Route::get('/appointment', 'Appointment')->name('appointment');
+        Route::get('/delete/appointment/{id}', 'DeleteAppointment')->name('delete.appointment');
+   });
+
 
    Route::controller(PlatformstatController::class)->group(function() {
     Route::get('/all/platformstats', 'AllPlatformstats')->name('all.platformstats');

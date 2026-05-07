@@ -887,6 +887,39 @@
                     </div>
                 </li>
 
+                <li>
+                    <a href="#timeslots" data-bs-toggle="collapse">
+                        <i data-feather="clock"></i>
+                        <span>Manage Time Slots</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="timeslots">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.timeslots') }}" class="tp-link">All Time Slots</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.timeslot') }}" class="tp-link">Add Time Slot</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#appointment" data-bs-toggle="collapse">
+                        <i data-feather="clock"></i>
+                        <span>Manage Appointment</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="appointment">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('appointment') }}" class="tp-link">Manage Appointments</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
                 <li class="menu-title mt-2">General</li>
 
                 <li>
