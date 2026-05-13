@@ -47,6 +47,7 @@ use App\Http\Controllers\Backend\StudentprocessController;
 use App\Http\Controllers\Backend\StudentrequirementController;
 use App\Http\Controllers\Backend\StudenttimelineController;
 use App\Http\Controllers\Backend\StudentvisaController;
+use App\Http\Controllers\Backend\StudymatchController;
 use App\Http\Controllers\Backend\SuccessController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\TimeslotController;
@@ -526,6 +527,11 @@ Route::middleware('auth')->group(function () {
 
     Route::controller(BookingController::class)->group(function() {
         Route::get('/booking', 'Booking')->name('booking');
+   });
+
+    Route::controller(StudymatchController::class)->group(function() {
+        Route::get('/studymatch', 'Studymatch')->name('studymatch');
+        Route::get('/delete/studymatch/{id}', 'DeleteStudymatch')->name('delete.studymatch');
    });
 
 
