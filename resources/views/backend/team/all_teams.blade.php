@@ -30,7 +30,6 @@
                                 <th>S/N</th>
                                 <th>Name</th>
                                 <th>Position</th>
-                                <th>Description</th>
                                 <th>Image</th>
                                 <th>Action</th>
                             </tr>
@@ -41,7 +40,6 @@
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->position }}</td>
-                                    <td>{{ $item->description }}</td>
                                     <td><img src="{{ asset($item->image) }}" alt="" style="width: 70px; height: 40px;"></td>
                                     <td>
                                         <div class="d-flex gap-2">

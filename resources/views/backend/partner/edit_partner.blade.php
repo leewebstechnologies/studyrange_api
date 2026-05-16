@@ -27,6 +27,15 @@
                         <form action="{{ route('update.partner') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="id" value="{{ $partner->id }}">
+
+                            <div class="col-md-6">
+                                <label for="validationDefault01" class="form-label">University Partner Image</label>
+                                <input type="file" name="image" class="form-control" id="image">
+                            </div>
+
+                            <div class="col-md-6">
+                                    <img id="showImage" src="{{ asset($partner->image) }}" class="rounded-circle avatar-xxl img-thumbnail float-start" alt="image profile">
+                            </div>
                             <div class="col-md-6">
                                 <label for="validationDefault01" class="form-label">University Partner Name</label>
                                 <input type="text" name="name" class="form-control" value="{{ $partner->name }}">

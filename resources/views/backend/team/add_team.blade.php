@@ -35,11 +35,6 @@
                                 <input type="text" name="position" class="form-control">
                             </div>
 
-                            <div class="col-md-12 form-group">
-                                <label for="validationDefault01" class="form-label">Team Description</label>
-                                <textarea class="form-control" name="description" placeholder="Enter team description"></textarea>
-                            </div>
-
                             <div class="col-md-6 form-group">
                                 <label for="validationDefault01" class="form-label">Team Image</label>
                                 <input type="file" name="image" class="form-control" id="image">
@@ -82,9 +77,6 @@
                     position: {
                         required: true,
                     },
-                    description: {
-                        required: true,
-                    },
                     image: {
                         required: true,
                     },
@@ -96,9 +88,6 @@
                     },
                     position: {
                         required: 'Please Enter Team Position',
-                    },
-                    description: {
-                        required: 'Please Enter Team Description',
                     },
                     image: {
                         required: 'Please Upload Team Image',

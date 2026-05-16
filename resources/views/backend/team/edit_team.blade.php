@@ -38,11 +38,6 @@
                             </div>
 
                             <div class="col-md-6">
-                                <label for="validationDefault01" class="form-label">Team Description</label>
-                                <textarea class="form-control" name="description" placeholder="Enter team description">{{ $team->description }}</textarea>
-                            </div>
-
-                            <div class="col-md-6">
                                 <label for="validationDefault01" class="form-label">Team Image</label>
                                 <input type="file" name="image" class="form-control" id="image">
                             </div>

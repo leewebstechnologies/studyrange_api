@@ -33,7 +33,6 @@ class TeamController extends Controller
             Team::create([
                 'name' => $request->name,
                 'position' => $request->position,
-                'description' => $request->description,
                 'image' => $save_url,
             ]);
         }
@@ -75,7 +74,6 @@ class TeamController extends Controller
             $team->update([
                 'name' => $request->name,
                 'position' => $request->position,
-                'description' => $request->description,
                 'image' => $save_url,
             ]);
 
@@ -89,7 +87,7 @@ class TeamController extends Controller
             $team->update([
                 'name' => $request->name,
                 'position' => $request->position,
-                'description' => $request->description,
+                'image' => $request->image,
             ]);
 
             $notification = [

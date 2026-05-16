@@ -28,6 +28,7 @@
                             <thead>
                             <tr>
                                 <th>S/N</th>
+                                <th>Image</th>
                                 <th>Name</th>
                                 <th>Rank</th>
                                 <th>Action</th>
@@ -37,6 +38,7 @@
                                 @foreach ($partner as $key=> $item)
                                 <tr>
                                     <td>{{ $key+1 }}</td>
+                                    <td><img src="{{ asset($item->image) }}" alt="partner" style="width: 70px; height: 40px;"></td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->rank }}</td>
                                     <td>
