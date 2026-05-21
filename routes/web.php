@@ -26,6 +26,7 @@ use App\Http\Controllers\Backend\FinancialrequirementController;
 use App\Http\Controllers\Backend\FinancialtimelineController;
 use App\Http\Controllers\Backend\FloatingbuttonController;
 use App\Http\Controllers\Backend\FooterController;
+use App\Http\Controllers\Backend\GuideController;
 use App\Http\Controllers\Backend\HeroController;
 use App\Http\Controllers\Backend\JourneyController;
 use App\Http\Controllers\Backend\LiveController;
@@ -448,6 +449,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/resourcetutorial/{id}', 'EditResourcetutorial')->name('edit.resourcetutorial');
     Route::post('/update/resourcetutorial', 'UpdateResourcetutorial')->name('update.resourcetutorial');
     Route::get('/delete/resourcetutorial/{id}', 'DeleteResourcetutorial')->name('delete.resourcetutorial');
+   });
+
+    Route::controller(GuideController::class)->group(function() {
+    Route::get('/all/guides', 'AllGuides')->name('all.guides');
+    Route::get('/add/guide', 'AddGuide')->name('add.guide');
+    Route::post('/store/guide', 'StoreGuide')->name('store.guide');
+    Route::get('/edit/guide/{id}', 'EditGuide')->name('edit.guide');
+    Route::post('/update/guide', 'UpdateGuide')->name('update.guide');
+    Route::get('/delete/guide/{id}', 'DeleteGuide')->name('delete.guide');
    });
 
 

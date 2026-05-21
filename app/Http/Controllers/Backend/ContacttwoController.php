@@ -58,7 +58,7 @@ class ContacttwoController extends Controller
         return redirect()->route('all.contacttwo')->with($notification);
     }
 
-    public function DeleteLive(int $id) {
+    public function DeleteContacttwo(int $id) {
         Contacttwo::findOrFail($id)->delete();
 
         $notification = [

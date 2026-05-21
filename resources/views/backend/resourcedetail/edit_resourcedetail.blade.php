@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form id="myForm" action="{{ route('update.resourcedetail') }}" method="post" class="row g-3">
+                        <form id="myForm" action="{{ route('update.resourcedetail') }}" method="post" class="row g-3" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="id" value="{{ $resourcedetail->id }}">
                             <div class="col-md-6">

@@ -798,6 +798,24 @@
                 </li>
 
                 <li>
+                    <a href="#guide" data-bs-toggle="collapse">
+                        <i data-feather="credit-card"></i>
+                        <span>Manage Guide</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="guide">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.guides') }}" class="tp-link">All Guides</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.guide') }}" class="tp-link">Add Guide</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
                     <a href="#cargo" data-bs-toggle="collapse">
                         <i data-feather="package"></i>
                         <span>Manage Cargo</span>
